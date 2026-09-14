@@ -6,7 +6,7 @@
   if (!d || !d.translations || !Array.isArray(d.projects)) return;
   const root = document.documentElement;
   let lang = d.defaultLanguage === 'en' ? 'en' : 'tr';
-  let filter = 'all', query = '', status = 'saved', projects = d.projects.slice();
+  let filter = 'all', query = '', status = 'saved', projects = d.projects.filter(p=>p.name?.toLowerCase()!=='aozkul.github.io');
   try { const saved = localStorage.getItem('ao-language'); if (['tr','en'].includes(saved)) lang = saved; } catch (_) {}
   const t = key => d.translations[lang][key] || d.translations.tr[key] || key;
   const local = value => typeof value === 'string' ? value : value?.[lang] || '';
@@ -18,6 +18,7 @@
     if (relative && /^[a-zA-Z0-9][a-zA-Z0-9_./-]*$/.test(raw) && !raw.includes('..')) return raw;
     try { const u = new URL(raw); return u.protocol === 'https:' && !u.username && !u.password ? u.href : null; } catch (_) { return null; }
   };
+  const projectPage = value => { const href=url(value); if(!href)return null; const host=new URL(href).hostname; return host==='github.com' || host.endsWith('.github.com') ? null : href; };
   const el = (tag,cls,text) => { const n=document.createElement(tag); if(cls)n.className=cls; if(text!==undefined)n.textContent=text; return n; };
   const link = (href,cls,text) => { const a=el('a',cls,text); a.href=href; a.target='_blank'; a.rel='noopener noreferrer'; return a; };
   const arrow = () => { const a=el('span','link-arrow','↗'); a.setAttribute('aria-hidden','true'); return a; };
@@ -33,13 +34,12 @@
     const grid=document.getElementById('project-grid'), fragment=document.createDocumentFragment();
     let count=0;
     projects.forEach((p,i)=>{
-      const repo=url(p.url); if(!repo)return;
-      const page=url(lang==='en' ? p.pageEn || p.page : p.page);
+      const page=projectPage(lang==='en' ? p.pageEn || p.page : p.page); if(!page)return;
       const a=el('article','project-card');a.dataset.repository=p.name;a.dataset.language=p.language || 'other';
       a.hidden=(filter!=='all' && filter!==a.dataset.language) || (query && !fold([p.name,p.language,local(p.description)].join(' ')).includes(query));
       if(!a.hidden)count++;
-      const target=link(page || repo,'project-link');
-      const action=t(page?'projects.visit':'projects.link');target.setAttribute('aria-label',`${p.name} — ${action}`);
+      const target=link(page,'project-link');
+      const action=t('projects.visit');target.setAttribute('aria-label',`${p.name} — ${action}`);
       const tone=['sage','lavender','peach','blue','yellow','rose'].includes(p.tone)?p.tone:'sage';
       const art=el('div','project-art '+tone);art.setAttribute('aria-hidden','true');
       art.append(el('span','art-grid'),el('span','art-caption',`AO / ${String(i+1).padStart(2,'0')}`),el('span','project-mark',p.mark || p.name.slice(0,2)),el('span','art-orbit'));
@@ -52,11 +52,11 @@
       }
       const sign=el('span','art-arrow');sign.append(arrow());art.append(sign);
       const info=el('div','project-info'),meta=el('div','project-meta');
-      meta.append(el('span','',t(page?'projects.website':'projects.repository')),el('span','language',p.language || 'GitHub'));
+      meta.append(el('span','',t('projects.website')),el('span','language',p.language || 'Web'));
       const bottom=el('div','project-bottom');bottom.append(el('span','',action),arrow());
       info.append(meta,el('h3','',p.name));if(local(p.description))info.append(el('p','project-description',local(p.description)));info.append(bottom);
       target.append(art,info);a.append(target);
-      const source=link(repo,'project-source',t('projects.source'));source.setAttribute('aria-label',`${p.name} — GitHub`);source.append(arrow());a.append(source);fragment.append(a);
+      fragment.append(a);
     });
     grid.replaceChildren(fragment);
     document.getElementById('project-empty').hidden=count!==0;
@@ -100,7 +100,7 @@
     document.querySelector('.filters').setAttribute('aria-label',t('projects.filter.label'));
     const search=document.getElementById('project-search');search.placeholder=t('projects.search');search.setAttribute('aria-label',t('projects.search'));
     const contact=document.getElementById('optional-links');contact.replaceChildren();
-    if(/^[^\s@?&#]+@[^\s@?&#]+\.[^\s@?&#]+$/.test(d.profile.email || '')){const a=el('a','',t('contact.email'));a.href='mailto:'+d.profile.email;contact.append(a);}
+    if(/^[^\s@?&#]+@[^\s@?&#]+\.[^\s@?&#]+$/.test(d.profile.email || '')){const a=el('a','button lime',t('contact.email'));a.href='mailto:'+d.profile.email;contact.append(a);}
     contact.hidden=!contact.children.length;menu(false);theme();filters();gallery();career();
   }
   // Only inspect trees belonging to repositories returned by the PUBLIC listing.
@@ -172,12 +172,12 @@
       }
       if(!complete)throw new Error('Incomplete pagination');
       const known=new Map(d.projects.map((p,i)=>[p.name.toLowerCase(),{...p,order:i}])),seen=new Set();
-      const fresh=rows.filter(r=>r.private===false && (!r.visibility || r.visibility==='public') && r.owner?.login?.toLowerCase()==='aozkul' && typeof r.name==='string' && /^[a-zA-Z0-9_.-]+$/.test(r.name)).map(r=>{
-        const p=known.get(r.name.toLowerCase()) || {},homepage=url(r.homepage);
-        const defaultPage=r.name.toLowerCase()==='aozkul.github.io'?'https://aozkul.github.io/':'https://aozkul.github.io/'+encodeURIComponent(r.name)+'/';
-        const page=homepage && new URL(homepage).hostname!=='github.com'?homepage:r.has_pages===true?(url(p.page)||defaultPage):null;
-        return {...p,name:r.name,url:'https://github.com/aozkul/'+encodeURIComponent(r.name),language:typeof r.language==='string'?r.language:null,page,pageEn:page && page===p.page?p.pageEn:null,description:p.description || (typeof r.description==='string'?r.description:''),visibility:'public',publicVerified:true,branch:typeof r.default_branch==='string'?r.default_branch:null,revision:typeof r.pushed_at==='string'?r.pushed_at:null};
-      }).filter(p=>{const name=p.name.toLowerCase();if(seen.has(name))return false;seen.add(name);return true;});
+      const fresh=rows.filter(r=>r.private===false && (!r.visibility || r.visibility==='public') && r.owner?.login?.toLowerCase()==='aozkul' && typeof r.name==='string' && r.name.toLowerCase()!=='aozkul.github.io' && /^[a-zA-Z0-9_.-]+$/.test(r.name)).map(r=>{
+        const p=known.get(r.name.toLowerCase()) || {},homepage=projectPage(r.homepage);
+        const defaultPage='https://aozkul.github.io/'+encodeURIComponent(r.name)+'/';
+        const page=homepage || (r.has_pages===true?(projectPage(p.page)||defaultPage):null);
+        return {...p,name:r.name,language:typeof r.language==='string'?r.language:null,page,pageEn:page && page===p.page?p.pageEn:null,description:p.description || (typeof r.description==='string'?r.description:''),visibility:'public',publicVerified:true,branch:typeof r.default_branch==='string'?r.default_branch:null,revision:typeof r.pushed_at==='string'?r.pushed_at:null};
+      }).filter(p=>{const name=p.name.toLowerCase();if(!p.page || seen.has(name))return false;seen.add(name);return true;});
       fresh.sort((a,b)=>(a.order??999)-(b.order??999)||a.name.localeCompare(b.name));
       projects=fresh;status='live';filters();gallery();void discoverIcons();
     }catch(_){status='saved';document.getElementById('project-sync').textContent=t('projects.sync.saved');}

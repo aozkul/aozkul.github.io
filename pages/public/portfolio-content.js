@@ -96,21 +96,8 @@
       "en": "A modern catalogue and shopping experience project for natural products."
     },
     "logo": true
-  },
-  {
-    "name": "aozkul.github.io",
-    "mark": "aö.",
-    "language": "HTML",
-    "tone": "sage",
-    "icon": "favicon.svg",
-    "page": "https://aozkul.github.io/",
-    "pageEn": "https://aozkul.github.io/",
-    "description": {
-      "tr": "Düşünceler, ürünler ve profesyonel deneyim. Hepsi bu portföyde.",
-      "en": "Ideas, products and professional experience, together in this portfolio."
-    }
   }
-].map(p => ({...p, url:'https://github.com/aozkul/'+p.name, visibility:'public'}));
+].map(p => ({...p, visibility:'public'}));
   const tr = {
     'universe.tag':'BAĞIMSIZ DİJİTAL ÜRÜNLER', 'universe.caption':'BİR FİKİR. BİR DENEYİM. BİR ÜRÜN.',
     'hero.eyebrow':'SENIOR SOFTWARE & DATA ENGINEER / TECHNICAL LEAD',
@@ -121,9 +108,9 @@
     'projects.note':'Projelerin tanıtım, destek ve gizlilik bilgilerine kendi sayfalarından ulaşabilirsin.',
     'projects.website':'PROJE WEB SAYFASI', 'projects.visit':'Proje sayfasını aç', 'projects.source':'GitHub deposu',
     'projects.search':'Proje veya teknoloji ara', 'projects.filter.other':'Diğer',
-    'projects.count':'{count} / {total} herkese açık depo',
-    'projects.sync.loading':'GitHub listesi kontrol ediliyor…', 'projects.sync.live':'GitHub ile güncel',
-    'projects.sync.saved':'Kayıtlı liste · GitHub bağlantısı kurulunca yenilenir',
+    'projects.count':'{count} / {total} proje',
+    'projects.sync.loading':'Proje listesi güncelleniyor…', 'projects.sync.live':'Proje listesi güncel',
+    'projects.sync.saved':'Uygulamalar ve web projeleri',
     'expertise.one.text':'Ölçeklenebilir mikroservisler, bulut mimarileri ve API entegrasyonları. Python, Go ve Azure ile kurumsal sistemlerde otomasyon, performans ve güvenilirlik.',
     'expertise.two.text':'Endüstri 4.0 için veri mimarileri, makine bağlantıları ve gerçek zamanlı veri akışları. Üretim sistemleri, iş uygulamaları ve SAP entegrasyonları.',
     'expertise.three.text':'İş analizi, ürün sahipliği, gereksinimler ve kabul kriterleri. Mimari kararlardan backlog netleştirmeye, Agile teslimattan canlıya geçişe kadar uçtan uca çalışma.',
@@ -155,9 +142,9 @@
     'projects.note':'Visit each project for its overview, support and privacy information.',
     'projects.website':'PROJECT WEBSITE', 'projects.visit':'Visit project website', 'projects.source':'GitHub repository',
     'projects.search':'Search projects or technologies', 'projects.filter.other':'Other',
-    'projects.count':'{count} / {total} public repositories',
-    'projects.sync.loading':'Checking GitHub…', 'projects.sync.live':'Up to date with GitHub',
-    'projects.sync.saved':'Saved list · Refreshes when GitHub is available',
+    'projects.count':'{count} / {total} projects',
+    'projects.sync.loading':'Updating projects…', 'projects.sync.live':'Project list up to date',
+    'projects.sync.saved':'Apps and web projects',
     'expertise.one.text':'Scalable microservices, cloud architectures and API integrations. Python, Go and Azure for enterprise automation, performance and reliability.',
     'expertise.two.text':'Data architectures, machine connectivity and real-time streams for Industry 4.0. Integrating production systems, business applications and SAP.',
     'expertise.three.text':'Business analysis, product ownership, requirements and acceptance criteria. End-to-end work from architectural decisions and backlog refinement to Agile delivery and go-live.',
