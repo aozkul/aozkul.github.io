@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07132f"/><stop offset="1" stop-color="#0c1d46"/></linearGradient>
+ <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#82f7ff"/><stop offset=".48" stop-color="#11a8ff"/><stop offset="1" stop-color="#1241d8"/></linearGradient>
+ <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c6fff3"/><stop offset=".5" stop-color="#67e3d8"/><stop offset="1" stop-color="#22a5ac"/></linearGradient>
+ <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffd9ff"/><stop offset=".5" stop-color="#b69cff"/><stop offset="1" stop-color="#6759e8"/></linearGradient>
+ <radialGradient id="orb"><stop stop-color="#fff"/><stop offset=".3" stop-color="#c7fbff"/><stop offset=".7" stop-color="#64d8ff"/><stop offset="1" stop-color="#9f6cff"/></radialGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="512" height="512" rx="118" fill="url(#bg)"/>
+<g opacity=".35" filter="url(#glow)"><ellipse cx="265" cy="254" rx="170" ry="96" fill="#0d5dff"/><ellipse cx="315" cy="270" rx="120" ry="70" fill="#24f0e5"/></g>
+<path d="M98 395c0-172 22-235 77-271 28-18 58-31 93-42 15-5 28 7 27 23-2 22-10 40-25 53-12 10-29 17-47 25-31 14-56 37-71 69-18 39-22 85-22 143 0 23-12 40-32 44-20 4-40-11-40-44z" fill="url(#g1)"/>
+<path d="M190 414c46-39 66-84 72-135 4-38-4-76 8-107 11-29 35-49 76-67 14-6 29 4 29 19 0 22-8 42-22 56-12 12-28 21-43 30-24 14-34 31-35 54-2 30 9 61 4 92-7 43-31 79-74 106-17 11-35 3-41-14-5-14 4-24 26-34z" fill="url(#g2)"/>
+<path d="M286 419c45-36 66-79 72-126 5-36-1-72 12-101 12-28 36-47 75-64 16-7 31 5 30 22-1 20-9 38-23 52-12 11-27 20-42 29-24 14-35 31-37 54-3 29 6 57 1 87-7 40-29 74-69 99-17 11-35 4-41-12-6-15 2-27 22-40z" fill="url(#g3)"/>
+<g filter="url(#glow)"><circle cx="286" cy="250" r="31" fill="url(#orb)"/><circle cx="294" cy="239" r="8" fill="#fff" opacity=".9"/></g>
+</svg>
