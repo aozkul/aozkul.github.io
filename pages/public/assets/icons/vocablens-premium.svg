@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<defs>
+ <radialGradient id="lens" cx="45%" cy="40%" r="62%"><stop offset="0" stop-color="#1a1b3c"/><stop offset=".5" stop-color="#14122f"/><stop offset=".72" stop-color="#05152d"/><stop offset="1" stop-color="#030712"/></radialGradient>
+ <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#30d8ff"/><stop offset=".45" stop-color="#5877ff"/><stop offset=".72" stop-color="#dc55ff"/><stop offset="1" stop-color="#ff8ce9"/></linearGradient>
+ <linearGradient id="text" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#19d9ff"/><stop offset=".52" stop-color="#74b2ff"/><stop offset="1" stop-color="#ff68e8"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="512" height="512" rx="112" fill="#02060e"/>
+<g transform="translate(256 206)">
+ <circle r="125" fill="none" stroke="#13233e" stroke-width="30"/>
+ <circle r="116" fill="url(#lens)" stroke="url(#ring)" stroke-width="7" filter="url(#glow)"/>
+ <circle r="95" fill="none" stroke="#31415f" stroke-width="8" opacity=".75"/>
+ <circle r="72" fill="none" stroke="#47506e" stroke-width="7" opacity=".72"/>
+ <circle r="51" fill="none" stroke="#1c2d51" stroke-width="9"/>
+ <circle r="25" fill="#020610"/>
+ <circle cx="-34" cy="-47" r="13" fill="#fff4ff"/>
+ <circle cx="43" cy="33" r="10" fill="#fff4ff"/>
+ <circle cx="-51" cy="-25" r="5" fill="#ff66ff"/>
+</g>
+<path d="M88 360h336" stroke="#24cfff" stroke-width="3" opacity=".6" filter="url(#glow)"/>
+<text x="256" y="408" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="62" font-weight="800" letter-spacing="-4" fill="url(#text)" stroke="#09101f" stroke-width="2">VocabLens</text>
+</svg>
