@@ -1,4 +1,5 @@
-/* Public portfolio. No credentials, tracking or private-repository requests. */
+/* Public portfolio. No credentials, tracking or private-repository requests.
+   Repository pagination, Pages links and optional public icon discovery. */
 (() => {
   'use strict';
   const d = window.PORTFOLIO_DATA;
@@ -102,6 +103,61 @@
     if(/^[^\s@?&#]+@[^\s@?&#]+\.[^\s@?&#]+$/.test(d.profile.email || '')){const a=el('a','',t('contact.email'));a.href='mailto:'+d.profile.email;contact.append(a);}
     contact.hidden=!contact.children.length;menu(false);theme();filters();gallery();career();
   }
+  // Only inspect trees belonging to repositories returned by the PUBLIC listing.
+  // Icons are optional: failures and rate limits never hide the project cards.
+  function iconCandidate(entries){
+    if(!Array.isArray(entries))return null;
+    const candidates=entries.filter(e=>e.type==='blob' && typeof e.path==='string' &&
+      typeof e.size==='number' && e.size>0 && e.size<=2097152 &&
+      !/(^|\/)(node_modules|vendor|\.git|pods|build|dist|test|tests|fixtures|screenshots|payments)(\/|$)/i.test(e.path) &&
+      !e.path.split('/').some(part=>part==='..' || part==='.') &&
+      /(^|\/)(app[-_]?icon(?:[-_]\d+)?|icon(?:[-_]\d+)?|logo|favicon|apple-touch-icon|Icon-App-1024x1024@1x)\.(png|webp|jpe?g|svg|ico)$/i.test(e.path));
+    const score=e=>{
+      let n=/app[-_]?icon|appiconset/i.test(e.path)?100:/\/icon[._-]/i.test('/'+e.path)?80:/\/logo\./i.test('/'+e.path)?70:40;
+      if(/1024/.test(e.path))n+=12;
+      if(/(^|\/)(public|assets|images)(\/|$)/i.test(e.path))n+=10;
+      if(/\.(png|webp)$/i.test(e.path))n+=5;
+      return n-e.path.split('/').length;
+    };
+    candidates.sort((a,b)=>score(b)-score(a)||a.path.localeCompare(b.path));
+    return candidates[0] || null;
+  }
+  async function discoverIcons(){
+    const pending=projects.filter(p=>!url(p.icon,true) && p.branch && p.publicVerified===true);
+    let next=0,changed=false;
+    const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),15000);
+    async function worker(){
+      while(next<pending.length && !controller.signal.aborted){
+        const p=pending[next++],key='ao-public-icon-v1:'+p.name;
+        try{
+          let cached=null;
+          try{cached=JSON.parse(sessionStorage.getItem(key)||'null');}catch(_){}
+          if(cached && cached.revision===p.revision && typeof cached.time==='number' && Date.now()-cached.time<86400000){
+            if(cached.icon && url(cached.icon)){p.icon=cached.icon;p.logo=cached.logo===true;changed=true;}
+            continue;
+          }
+          const response=await fetch('https://api.github.com/repos/aozkul/'+encodeURIComponent(p.name)+'/git/trees/'+encodeURIComponent(p.branch)+'?recursive=1',{
+            credentials:'omit',headers:{Accept:'application/vnd.github+json'},signal:controller.signal
+          });
+          if(response.status===403 || response.status===429){controller.abort();break;}
+          if(!response.ok)continue;
+          const data=await response.json();
+          // Do not treat a truncated tree as an exhaustive search.
+          if(data.truncated===true)continue;
+          const match=iconCandidate(data.tree);
+          let icon=null,logo=false;
+          if(match){
+            icon='https://raw.githubusercontent.com/aozkul/'+encodeURIComponent(p.name)+'/'+encodeURIComponent(p.branch)+'/'+match.path.split('/').map(encodeURIComponent).join('/');
+            logo=/(^|\/)logo\./i.test(match.path);
+            p.icon=icon;p.logo=logo;changed=true;
+          }
+          try{sessionStorage.setItem(key,JSON.stringify({revision:p.revision,time:Date.now(),icon,logo}));}catch(_){}
+        }catch(_){}
+      }
+    }
+    try{await Promise.all([worker(),worker()]);}finally{clearTimeout(timeout);}
+    if(changed)gallery();
+  }
   async function sync(){
     if(location.protocol==='file:')return;
     status='loading';document.getElementById('project-sync').textContent=t('projects.sync.loading');
@@ -118,11 +174,12 @@
       const known=new Map(d.projects.map((p,i)=>[p.name.toLowerCase(),{...p,order:i}])),seen=new Set();
       const fresh=rows.filter(r=>r.private===false && (!r.visibility || r.visibility==='public') && r.owner?.login?.toLowerCase()==='aozkul' && typeof r.name==='string' && /^[a-zA-Z0-9_.-]+$/.test(r.name)).map(r=>{
         const p=known.get(r.name.toLowerCase()) || {},homepage=url(r.homepage);
-        const page=homepage && new URL(homepage).hostname!=='github.com'?homepage:r.has_pages?url(p.page):null;
-        return {...p,name:r.name,url:'https://github.com/aozkul/'+encodeURIComponent(r.name),language:r.language || null,page,pageEn:page && page===p.page?p.pageEn:null,description:p.description || (typeof r.description==='string'?r.description:''),visibility:'public'};
+        const defaultPage=r.name.toLowerCase()==='aozkul.github.io'?'https://aozkul.github.io/':'https://aozkul.github.io/'+encodeURIComponent(r.name)+'/';
+        const page=homepage && new URL(homepage).hostname!=='github.com'?homepage:r.has_pages===true?(url(p.page)||defaultPage):null;
+        return {...p,name:r.name,url:'https://github.com/aozkul/'+encodeURIComponent(r.name),language:typeof r.language==='string'?r.language:null,page,pageEn:page && page===p.page?p.pageEn:null,description:p.description || (typeof r.description==='string'?r.description:''),visibility:'public',publicVerified:true,branch:typeof r.default_branch==='string'?r.default_branch:null,revision:typeof r.pushed_at==='string'?r.pushed_at:null};
       }).filter(p=>{const name=p.name.toLowerCase();if(seen.has(name))return false;seen.add(name);return true;});
       fresh.sort((a,b)=>(a.order??999)-(b.order??999)||a.name.localeCompare(b.name));
-      projects=fresh;status='live';filters();gallery();
+      projects=fresh;status='live';filters();gallery();void discoverIcons();
     }catch(_){status='saved';document.getElementById('project-sync').textContent=t('projects.sync.saved');}
     finally{clearTimeout(timeout);}
   }
