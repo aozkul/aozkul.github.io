@@ -57,10 +57,19 @@
   }
   function career() {
     const timeline=document.getElementById('career-list');
-    timeline.replaceChildren(...(d.career || []).map(job=>{
-      const item=el('article','career-item'),date=el('p','career-date',local(job.dates));
-      const body=el('div','career-body');body.append(el('h3','',job.role),el('p','career-company',job.company+' · '+job.city),el('p','career-text',local(job.text)));
-      item.append(date,body);return item;
+    timeline.replaceChildren(...(d.career || []).map((job,index)=>{
+      const item=el('article','career-item'+(job.current?' is-current':'')),meta=el('div','career-meta'),id='career-role-'+(index+1);
+      item.setAttribute('aria-labelledby',id);
+      meta.append(el('p','career-date',local(job.dates)),el('p','career-location',job.city));
+      if(job.current)meta.append(el('span','career-status',t('career.current')));
+      if(job.contract)meta.append(el('span','career-contract',t('career.contract')));
+      const body=el('div','career-body'),heading=el('h3','',job.role);heading.id=id;
+      body.append(el('p','career-focus',local(job.focus)),heading,el('p','career-company',job.company),el('p','career-text',local(job.text)));
+      const details=el('ul','career-details');
+      for(const detail of job.details || []){const row=el('li');row.append(el('strong','',local(detail.label)),el('span','',local(detail.text)));details.append(row);}
+      const tags=el('ul','career-tags');tags.setAttribute('aria-label',t('career.tags'));
+      for(const tag of job.tags || [])tags.append(el('li','',tag));
+      body.append(details,tags);item.append(meta,body);return item;
     }));
     const impactCard=(p,index)=>{
       const a=el('article','impact-card'+(p.value?' impact-card-metric':'')),id='impact-case-'+index;

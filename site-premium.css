@@ -60,3 +60,31 @@ html{scroll-padding-top:calc(var(--header-height) + 24px)}
 @media(max-width:750px){.impact-heading{grid-template-columns:1fr;gap:22px}.impact-list{margin-top:30px}.impact-list,.impact-other{gap:16px}.impact-card{padding:26px}.impact-card h3{min-height:0;margin-bottom:23px}.impact-card .impact-value{font-size:55px}.impact-card .impact-category{margin-bottom:24px}.impact-subheading,.impact-delivery{margin-top:48px}.impact-story{gap:19px}.impact-intro{font-size:14px}}
 @media(max-width:440px){.impact-process{grid-template-columns:1fr;gap:25px}.impact-card{padding:23px}.impact-note{font-size:10px}}
 @media print{.impact-card{break-inside:avoid;background:none}.impact-delivery{break-inside:avoid}.impact-list,.impact-other{gap:12px}.impact-card{padding:15px}}
+/* Detailed professional timeline, with CV dates and role-specific contributions. */
+.career-list{position:relative;margin-top:48px}
+.career-list:before{content:"";position:absolute;top:24px;bottom:35px;left:197px;width:1px;background:var(--line)}
+.career-item{position:relative;grid-template-columns:166px minmax(0,1fr);gap:64px;padding:0 0 30px;border:0}
+.career-item:last-child{padding-bottom:0}
+.career-item:before{content:"";position:absolute;left:192px;top:30px;width:11px;height:11px;border-radius:50%;background:var(--surface);border:2px solid var(--line);box-shadow:0 0 0 6px var(--bg)}
+.career-item.is-current:before{border-color:var(--accent);background:var(--accent)}
+.career-meta{padding-top:24px;min-width:0}
+.career-date{font:500 13px/1.8 var(--sans);color:var(--ink);margin:0}
+.career-location{font-size:13px;color:var(--muted);margin:6px 0 14px}
+.career-status,.career-contract{display:inline-block;border:1px solid var(--line);border-radius:7px;font-size:12px;line-height:1.6;padding:4px 9px;color:var(--muted)}
+.career-status{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 30%,var(--line));background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.career-body{min-width:0;padding:32px 36px;background:var(--surface);border:1px solid var(--line);border-radius:24px}
+.is-current .career-body{background:linear-gradient(125deg,color-mix(in srgb,var(--accent) 7%,var(--surface)),var(--surface) 58%);border-color:color-mix(in srgb,var(--accent) 24%,var(--line))}
+.career-focus{font:12px/1.7 ui-monospace,monospace;letter-spacing:.04em;color:var(--muted);margin:0 0 17px}
+.career-body h3{font-size:clamp(23px,2.2vw,29px);font-weight:550;line-height:1.3;letter-spacing:-.03em;margin:0 0 9px}
+.career-company{font-size:16px;font-weight:500;color:var(--accent);margin:0}
+.career-text{font-size:16px;line-height:1.8;max-width:780px;margin:21px 0 0}
+.career-details{display:grid;grid-template-columns:1fr 1fr;column-gap:32px;row-gap:24px;list-style:none;margin:28px 0 0;padding:27px 0 0;border-top:1px solid var(--line)}
+.career-details li{min-width:0}
+.career-details strong{display:block;font-size:14px;line-height:1.5;font-weight:600;margin-bottom:7px}
+.career-details span{display:block;font-size:15px;line-height:1.8;color:var(--muted)}
+.career-tags{list-style:none;display:flex;flex-wrap:wrap;gap:7px;border-top:1px solid var(--line);padding:22px 0 0;margin:28px 0 0}
+.career-tags li{font:12px/1.5 ui-monospace,monospace;padding:5px 9px;border-radius:6px;background:color-mix(in srgb,var(--accent) 7%,transparent);color:var(--muted)}
+@media(max-width:1000px){.career-item{grid-template-columns:148px minmax(0,1fr);gap:42px}.career-list:before{left:166px}.career-item:before{left:161px}.career-body{padding:28px}.career-details{grid-template-columns:1fr;gap:21px}}
+@media(max-width:750px){.career-list{margin-top:32px}.career-list:before,.career-item:before{display:none}.career-item{grid-template-columns:minmax(0,1fr);gap:15px;padding-bottom:35px}.career-meta{padding-top:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}.career-date{margin:0}.career-location{margin:0}.career-status,.career-contract{margin-left:auto}.career-body{padding:25px}.career-focus{font-size:12px}.career-text{margin-top:18px}.career-details{margin-top:23px;padding-top:23px}.career-tags{margin-top:23px;padding-top:20px}}
+@media(max-width:390px){.career-body{padding:22px}.career-status,.career-contract{margin-left:0}.career-meta{gap:8px 12px}.career-focus{letter-spacing:0}}
+@media print{.career-list:before,.career-item:before{display:none}.career-item{grid-template-columns:150px 1fr;gap:20px;break-inside:avoid}.career-body,.is-current .career-body{background:none}.career-body{padding:20px}.career-details{grid-template-columns:1fr}}
