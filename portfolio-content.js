@@ -99,6 +99,7 @@
   }
 ].map(p => ({...p, visibility:'public'}));
   const tr = {
+    'nav.home':'Başlangıç', 'nav.career':'Deneyim', 'nav.impact':'Sonuçlar', 'nav.credentials':'Yetkinlikler', 'nav.contact':'İletişim', 'nav.contents':'BU SAYFADA', 'nav.menu':'Menü',
     'projects.empty':'Aramana uygun proje bulunamadı.',
     'universe.tag':'BAĞIMSIZ DİJİTAL ÜRÜNLER', 'universe.caption':'BİR FİKİR. BİR DENEYİM. BİR ÜRÜN.',
     'hero.eyebrow':'SENIOR SOFTWARE & DATA ENGINEER / TECHNICAL LEAD',
@@ -134,6 +135,7 @@
     'languages.text':'Türkçe — Ana dil · İngilizce — Akıcı · Almanca — Başlangıç'
   };
   const en = {
+    'nav.home':'Home', 'nav.career':'Experience', 'nav.impact':'Impact', 'nav.credentials':'Skills', 'nav.contact':'Contact', 'nav.contents':'ON THIS PAGE', 'nav.menu':'Menu',
     'projects.empty':'No projects match your search.',
     'universe.tag':'INDEPENDENT DIGITAL PRODUCTS', 'universe.caption':'AN IDEA. AN EXPERIENCE. A PRODUCT.',
     'hero.eyebrow':'SENIOR SOFTWARE & DATA ENGINEER / TECHNICAL LEAD',
