@@ -6,7 +6,7 @@
   if (!d || !d.translations || !Array.isArray(d.projects)) return;
   const root = document.documentElement;
   let lang = d.defaultLanguage === 'en' ? 'en' : 'tr';
-  let filter = 'all', query = '', status = 'saved', projects = d.projects.filter(p=>p.name?.toLowerCase()!=='aozkul.github.io');
+  let query = '', status = 'saved', projects = d.projects.filter(p=>p.name?.toLowerCase()!=='aozkul.github.io');
   try { const saved = localStorage.getItem('ao-language'); if (['tr','en'].includes(saved)) lang = saved; } catch (_) {}
   const t = key => d.translations[lang][key] || d.translations.tr[key] || key;
   const local = value => typeof value === 'string' ? value : value?.[lang] || '';
@@ -22,21 +22,13 @@
   const el = (tag,cls,text) => { const n=document.createElement(tag); if(cls)n.className=cls; if(text!==undefined)n.textContent=text; return n; };
   const link = (href,cls,text) => { const a=el('a',cls,text); a.href=href; a.target='_blank'; a.rel='noopener noreferrer'; return a; };
   const arrow = () => { const a=el('span','link-arrow','↗'); a.setAttribute('aria-hidden','true'); return a; };
-  function filters() {
-    const values=[...new Set(projects.map(p=>p.language || 'other'))].sort();
-    if(filter!=='all' && !values.includes(filter))filter='all';
-    document.querySelector('.filters').replaceChildren(...['all',...values].map(v=>{
-      const b=el('button','',v==='all'?t('projects.filter.all'):v==='other'?t('projects.filter.other'):v);
-      b.type='button';b.dataset.filter=v;b.setAttribute('aria-pressed',String(filter===v));return b;
-    }));
-  }
   function gallery() {
     const grid=document.getElementById('project-grid'), fragment=document.createDocumentFragment();
     let count=0;
     projects.forEach((p,i)=>{
       const page=projectPage(lang==='en' ? p.pageEn || p.page : p.page); if(!page)return;
       const a=el('article','project-card');a.dataset.repository=p.name;a.dataset.language=p.language || 'other';
-      a.hidden=(filter!=='all' && filter!==a.dataset.language) || (query && !fold([p.name,p.language,local(p.description)].join(' ')).includes(query));
+      a.hidden=Boolean(query && !fold([p.name,p.language,local(p.description)].join(' ')).includes(query));
       if(!a.hidden)count++;
       const target=link(page,'project-link');
       const action=t('projects.visit');target.setAttribute('aria-label',`${p.name} — ${action}`);
@@ -97,11 +89,10 @@
     document.querySelector('meta[property="og:description"]').content=t('meta.description');
     document.querySelector('meta[property="og:locale"]').content=lang==='tr'?'tr_TR':'en_US';
     document.getElementById('main-nav').setAttribute('aria-label',lang==='tr'?'Ana menü':'Main navigation');
-    document.querySelector('.filters').setAttribute('aria-label',t('projects.filter.label'));
     const search=document.getElementById('project-search');search.placeholder=t('projects.search');search.setAttribute('aria-label',t('projects.search'));
     const contact=document.getElementById('optional-links');contact.replaceChildren();
     if(/^[^\s@?&#]+@[^\s@?&#]+\.[^\s@?&#]+$/.test(d.profile.email || '')){const a=el('a','button lime',t('contact.email'));a.href='mailto:'+d.profile.email;contact.append(a);}
-    contact.hidden=!contact.children.length;menu(false);theme();filters();gallery();career();
+    contact.hidden=!contact.children.length;menu(false);theme();gallery();career();
   }
   // Only inspect trees belonging to repositories returned by the PUBLIC listing.
   // Icons are optional: failures and rate limits never hide the project cards.
@@ -179,12 +170,11 @@
         return {...p,name:r.name,language:typeof r.language==='string'?r.language:null,page,pageEn:page && page===p.page?p.pageEn:null,description:p.description || (typeof r.description==='string'?r.description:''),visibility:'public',publicVerified:true,branch:typeof r.default_branch==='string'?r.default_branch:null,revision:typeof r.pushed_at==='string'?r.pushed_at:null};
       }).filter(p=>{const name=p.name.toLowerCase();if(!p.page || seen.has(name))return false;seen.add(name);return true;});
       fresh.sort((a,b)=>(a.order??999)-(b.order??999)||a.name.localeCompare(b.name));
-      projects=fresh;status='live';filters();gallery();void discoverIcons();
+      projects=fresh;status='live';gallery();void discoverIcons();
     }catch(_){status='saved';document.getElementById('project-sync').textContent=t('projects.sync.saved');}
     finally{clearTimeout(timeout);}
   }
   document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>{lang=b.dataset.lang;store('ao-language',lang);translate();}));
-  document.querySelector('.filters').addEventListener('click',e=>{const b=e.target.closest('button[data-filter]');if(!b)return;filter=b.dataset.filter;filters();gallery();});
   document.getElementById('project-search').addEventListener('input',e=>{query=fold(e.target.value.trim());gallery();});
   document.getElementById('theme-toggle').addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';store('ao-theme',root.dataset.theme);theme();});
   document.getElementById('menu-toggle').addEventListener('click',()=>menu(document.getElementById('menu-toggle').getAttribute('aria-expanded')!=='true'));

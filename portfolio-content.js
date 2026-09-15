@@ -99,6 +99,7 @@
   }
 ].map(p => ({...p, visibility:'public'}));
   const tr = {
+    'projects.empty':'Aramana uygun proje bulunamadı.',
     'universe.tag':'BAĞIMSIZ DİJİTAL ÜRÜNLER', 'universe.caption':'BİR FİKİR. BİR DENEYİM. BİR ÜRÜN.',
     'hero.eyebrow':'SENIOR SOFTWARE & DATA ENGINEER / TECHNICAL LEAD',
     'hero.description':'Ölçeklenebilir mikroservisler, bulut mimarileri, API’ler ve veri odaklı dijital platformlar geliştiriyorum. İş ihtiyaçlarını teknik gereksinimlere ve ölçülebilir değer üreten çözümlere dönüştürüyorum.',
@@ -133,6 +134,7 @@
     'languages.text':'Türkçe — Ana dil · İngilizce — Akıcı · Almanca — Başlangıç'
   };
   const en = {
+    'projects.empty':'No projects match your search.',
     'universe.tag':'INDEPENDENT DIGITAL PRODUCTS', 'universe.caption':'AN IDEA. AN EXPERIENCE. A PRODUCT.',
     'hero.eyebrow':'SENIOR SOFTWARE & DATA ENGINEER / TECHNICAL LEAD',
     'hero.description':'I design and deliver scalable microservices, cloud architectures, APIs and data-driven digital platforms — translating business needs into technical requirements and solutions with measurable value.',
