@@ -97,6 +97,21 @@
     },
     "logo": true
   }
+,
+{
+  "name": "Kernora",
+  "mark": "K",
+  "language": "TypeScript",
+  "tone": "blue",
+  "icon": "assets/icons/kernora-original.png",
+  "page": "https://aozkul.github.io/kernora/",
+  "pageEn": "https://aozkul.github.io/kernora/en/",
+  "catalogOnly": true,
+  "description": {
+    "tr": "Kayıtlar, süreçler, belgeler ve ekip görevleri. Danışmanlık ve operasyon için ortak CRM çalışma alanı.",
+    "en": "Records, processes, documents and team tasks. A shared CRM workspace for consultancy and operations."
+  }
+}
 ].map(p => ({...p, visibility:'public'}));
   const tr = {
     'nav.home':'Başlangıç', 'nav.career':'Deneyim', 'nav.impact':'Sonuçlar', 'nav.credentials':'Yetkinlikler', 'nav.contact':'İletişim', 'nav.contents':'BU SAYFADA', 'nav.menu':'Menü',
@@ -106,7 +121,7 @@
     'hero.description':'Ölçeklenebilir mikroservisler, bulut mimarileri, API’ler ve veri odaklı dijital platformlar geliştiriyorum. İş ihtiyaçlarını teknik gereksinimlere ve ölçülebilir değer üreten çözümlere dönüştürüyorum.',
     'hero.secondary':'Deneyimimi incele',
     'projects.title':'Projelerim, tek bir yerde.',
-    'projects.description':'Günlük hayatın küçük ihtiyaçları için tasarladığım uygulamalar ve web projeleri. Her birinin kendine ait bir hikâyesi var.',
+    'projects.description':'Günlük hayatı kolaylaştıran uygulamalardan iş süreçlerini bir araya getiren platformlara. Tasarladığım ürünler ve web projeleri.',
     'projects.note':'Projelerin tanıtım, destek ve gizlilik bilgilerine kendi sayfalarından ulaşabilirsin.',
     'projects.website':'PROJE WEB SAYFASI', 'projects.visit':'Proje sayfasını aç', 'projects.source':'GitHub deposu',
     'projects.search':'Proje veya teknoloji ara', 'projects.filter.other':'Diğer',
@@ -152,7 +167,7 @@
     'hero.description':'I design and deliver scalable microservices, cloud architectures, APIs and data-driven digital platforms — translating business needs into technical requirements and solutions with measurable value.',
     'hero.secondary':'Explore my experience',
     'projects.title':'My projects, in one place.',
-    'projects.description':'Apps and web projects I build for the small needs of everyday life. Each one has a story of its own.',
+    'projects.description':'From everyday apps to platforms that connect business processes. Explore the products and web projects I design and build.',
     'projects.note':'Visit each project for its overview, support and privacy information.',
     'projects.website':'PROJECT WEBSITE', 'projects.visit':'Visit project website', 'projects.source':'GitHub repository',
     'projects.search':'Search projects or technologies', 'projects.filter.other':'Other',

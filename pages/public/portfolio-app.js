@@ -217,6 +217,12 @@
         const page=homepage || (r.has_pages===true?(projectPage(p.page)||defaultPage):null);
         return {...p,name:r.name,language:typeof r.language==='string'?r.language:null,page,pageEn:page && page===p.page?p.pageEn:null,description:p.description || (typeof r.description==='string'?r.description:''),visibility:'public',publicVerified:true,branch:typeof r.default_branch==='string'?r.default_branch:null,revision:typeof r.pushed_at==='string'?r.pushed_at:null};
       }).filter(p=>{const name=p.name.toLowerCase();if(!p.page || seen.has(name))return false;seen.add(name);return true;});
+      // Owner-approved public showcases can have a private source repository.
+      // Keep their published pages in the catalogue without querying private data.
+      for(const p of known.values()){
+        const name=p.name.toLowerCase();
+        if(p.catalogOnly===true && projectPage(p.page) && !seen.has(name)){fresh.push(p);seen.add(name);}
+      }
       fresh.sort((a,b)=>(a.order??999)-(b.order??999)||a.name.localeCompare(b.name));
       projects=fresh;status='live';gallery();void discoverIcons();
     }catch(_){status='saved';document.getElementById('project-sync').textContent=t('projects.sync.saved');}

@@ -1,0 +1,351 @@
+{
+  "name": "Kernora",
+  "repo": "kernora",
+  "color": "#e2bd72",
+  "secondary": "#759bc8",
+  "icon": "app-icon.png",
+  "copy": {
+    "tr": {
+      "tag": "DANIŞMANLIK & OPERASYON CRM",
+      "title": "Her adım net.\nHer süreç bağlı.",
+      "intro": "Kernora; kayıtları, başvuru aşamalarını, belgeleri ve ekip görevlerini ortak bir çalışma alanında buluşturur. İlk temastan operasyonun tamamlanmasına kadar süreci birlikte takip et.",
+      "features": [
+        [
+          "Kayıtların bütününü gör",
+          "Aday, öğrenci ve operasyon kayıtlarını; iletişim bilgileri, süreç geçmişi ve ilgili aksiyonlarla birlikte yönet."
+        ],
+        [
+          "Süreci adım adım takip et",
+          "Programlar, pipeline aşamaları ve yol haritalarıyla her kaydın nerede olduğunu ve sıradaki adımını gör."
+        ],
+        [
+          "Ekibin gündemini bir araya getir",
+          "Aksiyon merkezi, toplantılar ve hedef tarihler üzerinden yapılacak işleri düzenle."
+        ],
+        [
+          "Belge ve ödeme akışını bağla",
+          "Belge talepleri, inceleme adımları, ödeme kayıtları ve dekont takibini ilgili süreçle birlikte ele al."
+        ],
+        [
+          "Portal ile iletişimi sürdür",
+          "Kişisel portal üzerinden formlar, belgeler, teklifler, sözleşmeler ve destek başlıklarını aynı akışta sun."
+        ],
+        [
+          "Kurallarla ilerle, raporlarla izle",
+          "Şablonlar ve olay tabanlı otomasyonlarla tekrar eden adımları tanımla; dashboard ve raporlarla operasyonu takip et."
+        ]
+      ],
+      "offer": "Kernora proje tanıtımı, destek ve gizlilik merkezi.",
+      "steps": [
+        "Kayıt, program ve süreç yapısını ekibinin çalışma biçimine göre planla.",
+        "Görevleri, belgeleri ve toplantıları ilgili kayıt ve aşamalarla ilişkilendir.",
+        "Ekip çalışma alanı ve portal üzerinden süreci takip et."
+      ],
+      "visualTitle": "İLK TEMASTAN OPERASYONA",
+      "visualSteps": [
+        [
+          "Kayıt & değerlendirme",
+          "İhtiyaçları ve başlangıç noktasını belirle."
+        ],
+        [
+          "Program & yol haritası",
+          "Aşamaları ve hedef tarihleri düzenle."
+        ],
+        [
+          "Görev & takip",
+          "Belge, toplantı ve aksiyonları birleştir."
+        ]
+      ],
+      "visualTools": [
+        "CRM",
+        "Portal",
+        "Otomasyon"
+      ]
+    },
+    "en": {
+      "tag": "CONSULTANCY & OPERATIONS CRM",
+      "title": "Every step clear.\nEvery process connected.",
+      "intro": "Kernora brings records, application stages, documents and team tasks into one shared workspace. Follow the journey together, from first contact through operational delivery.",
+      "features": [
+        [
+          "See the full record",
+          "Manage prospect, student and operational records with contact details, process history and related actions."
+        ],
+        [
+          "Follow each stage",
+          "Use programmes, pipeline stages and roadmaps to see where a record stands and what comes next."
+        ],
+        [
+          "Bring the team’s work together",
+          "Organise actions, meetings and target dates through a shared action centre."
+        ],
+        [
+          "Connect documents and payments",
+          "Keep document requests, reviews, payment records and receipt tracking connected to the relevant process."
+        ],
+        [
+          "Keep in touch through the portal",
+          "Bring forms, documents, offers, contracts and support into a personal portal experience."
+        ],
+        [
+          "Work with rules, follow the results",
+          "Define repeatable steps with templates and event-based automations; follow operations through dashboards and reports."
+        ]
+      ],
+      "offer": "The Kernora project overview, support and privacy centre.",
+      "steps": [
+        "Plan records, programmes and processes around how your team works.",
+        "Connect tasks, documents and meetings to the relevant records and stages.",
+        "Follow progress through the team workspace and personal portal."
+      ],
+      "visualTitle": "FROM FIRST CONTACT TO DELIVERY",
+      "visualSteps": [
+        [
+          "Record & assessment",
+          "Establish the needs and starting point."
+        ],
+        [
+          "Programme & roadmap",
+          "Organise stages and target dates."
+        ],
+        [
+          "Action & follow-up",
+          "Connect documents, meetings and tasks."
+        ]
+      ],
+      "visualTools": [
+        "CRM",
+        "Portal",
+        "Automation"
+      ]
+    },
+    "de": {
+      "tag": "CRM FÜR BERATUNG & OPERATIVE ABLÄUFE",
+      "title": "Jeder Schritt klar.\nAlle Abläufe verbunden.",
+      "intro": "Kernora verbindet Kontakte, Bewerbungsphasen, Dokumente und Teamaufgaben in einem gemeinsamen Arbeitsbereich. Begleite den gesamten Prozess vom ersten Kontakt bis zur Umsetzung.",
+      "features": [
+        [
+          "Den gesamten Vorgang sehen",
+          "Interessenten-, Studierenden- und operative Datensätze mit Kontaktdaten, Verlauf und zugehörigen Aufgaben verwalten."
+        ],
+        [
+          "Jede Phase verfolgen",
+          "Programme, Pipeline-Phasen und Roadmaps zeigen den aktuellen Stand und den nächsten Schritt."
+        ],
+        [
+          "Die Arbeit im Team bündeln",
+          "Aufgaben, Besprechungen und Zieltermine über eine gemeinsame Aufgabenzentrale organisieren."
+        ],
+        [
+          "Dokumente und Zahlungen verbinden",
+          "Dokumentenanfragen, Prüfungen, Zahlungsdatensätze und Belege dem passenden Vorgang zuordnen."
+        ],
+        [
+          "Über das Portal in Kontakt bleiben",
+          "Formulare, Dokumente, Angebote, Verträge und Support in einem persönlichen Portal zusammenführen."
+        ],
+        [
+          "Mit Regeln arbeiten, Fortschritte verfolgen",
+          "Wiederkehrende Schritte mit Vorlagen und ereignisbasierten Automatisierungen definieren; Abläufe über Dashboards und Berichte verfolgen."
+        ]
+      ],
+      "offer": "Projektvorstellung, Support und Datenschutz für Kernora.",
+      "steps": [
+        "Datensätze, Programme und Abläufe passend zur Arbeitsweise des Teams planen.",
+        "Aufgaben, Dokumente und Termine den jeweiligen Vorgängen und Phasen zuordnen.",
+        "Fortschritte im Teamarbeitsbereich und persönlichen Portal verfolgen."
+      ],
+      "visualTitle": "VOM ERSTKONTAKT ZUR UMSETZUNG",
+      "visualSteps": [
+        [
+          "Kontakt & Einschätzung",
+          "Bedarf und Ausgangspunkt bestimmen."
+        ],
+        [
+          "Programm & Roadmap",
+          "Phasen und Zieltermine organisieren."
+        ],
+        [
+          "Aufgaben & Nachverfolgung",
+          "Dokumente, Termine und Aufgaben verbinden."
+        ]
+      ],
+      "visualTools": [
+        "CRM",
+        "Portal",
+        "Automatisierung"
+      ]
+    }
+  },
+  "ui": {
+    "tr": {
+      "features": "Birbirine bağlı süreçler. Tek çalışma alanı.",
+      "how": "Ekibinin akışına uyum sağlar.",
+      "supportIntro": "Kernora’nın özellikleri, erişim veya kullanım hakkında soruların için buradayız.",
+      "contactText": "Tarayıcını, işletim sistemini, ilgili ekranı ve sorunu tekrarlama adımlarını yaz. Parola, erişim bağlantısı, öğrenci/müşteri kaydı veya kişisel belge gönderme. Ekran görüntülerindeki özel bilgileri gizle.",
+      "date": "Son güncelleme: 15 Eylül 2026",
+      "privacyIntro": "Bu açıklama Kernora’nın tanıtım ve destek web sayfalarının veri kullanımını kapsar.",
+      "helpIntro": "Kernora projesi ve bu web sitesinin gizliliği hakkında doğrudan iletişime geç."
+    },
+    "en": {
+      "features": "Connected processes. One workspace.",
+      "how": "Fits the way your team works.",
+      "supportIntro": "Get help with questions about Kernora features, access or usage.",
+      "contactText": "Include your browser, operating system, affected screen and steps to reproduce the issue. Do not send passwords, access links, student/client records or personal documents. Hide private details in screenshots.",
+      "date": "Last updated: September 15, 2026",
+      "privacyIntro": "This notice covers data handling on the Kernora project overview and support website.",
+      "helpIntro": "Get in touch about the Kernora project or privacy on this website."
+    },
+    "de": {
+      "features": "Verbundene Abläufe. Ein Arbeitsbereich.",
+      "how": "Passt zur Arbeitsweise deines Teams.",
+      "supportIntro": "Hier erhältst du Unterstützung bei Fragen zu Funktionen, Zugang und Nutzung von Kernora.",
+      "contactText": "Nenne Browser, Betriebssystem, betroffene Ansicht und Schritte zum Nachstellen. Sende keine Passwörter, Zugangslinks, Studierenden- oder Kundendaten und keine persönlichen Dokumente. Verberge private Angaben auf Screenshots.",
+      "date": "Aktualisiert am 15. September 2026",
+      "privacyIntro": "Diese Hinweise betreffen die Datenverarbeitung auf der Kernora-Projekt- und Supportwebsite.",
+      "helpIntro": "Direkter Kontakt zum Kernora-Projekt und zum Datenschutz auf dieser Website."
+    }
+  },
+  "faq": {
+    "tr": [
+      [
+        "Kernora ne için tasarlandı?",
+        "Danışmanlık ve operasyon ekiplerinin kayıt, başvuru, görev, belge, toplantı ve ödeme takibini ortak bir çalışma alanında yönetmesi için."
+      ],
+      [
+        "Buradan CRM’e giriş yapabilir miyim?",
+        "Bu sayfa proje tanıtım ve destek merkezidir. Çalışma alanına erişim için kurumunun yöneticisine başvur; proje veya kurulum sorularını destek e-postasına iletebilirsin."
+      ],
+      [
+        "Bir sorunu nasıl bildirmeliyim?",
+        "İlgili ekranı, tarayıcı sürümünü, beklediğin sonucu ve gerçekleşen durumu yaz. Hesap, müşteri, öğrenci ve belge bilgilerini paylaşmadan önce kaldır."
+      ],
+      [
+        "Kayıt ve belge verileriyle ilgili kime ulaşmalıyım?",
+        "Kullandığın CRM kurulumunun sorumlu kurumuna başvur. Bu tanıtım sitesi CRM veritabanına bağlanmaz ve kayıtlarını görüntülemez."
+      ]
+    ],
+    "en": [
+      [
+        "Who is Kernora designed for?",
+        "Consultancy and operations teams managing records, applications, tasks, documents, meetings and payment tracking in one workspace."
+      ],
+      [
+        "Can I sign in to the CRM here?",
+        "This is the project overview and support centre. Contact your organisation’s administrator for workspace access; send project or setup questions to the support email."
+      ],
+      [
+        "How should I report an issue?",
+        "Describe the affected screen, browser version, expected outcome and what happened. Remove account, client, student and document details before sharing."
+      ],
+      [
+        "Who handles record and document data requests?",
+        "Contact the organisation responsible for your CRM deployment. This showcase does not connect to the CRM database or view your records."
+      ]
+    ],
+    "de": [
+      [
+        "Für wen wurde Kernora entwickelt?",
+        "Für Beratungs- und operative Teams, die Kontakte, Bewerbungen, Aufgaben, Dokumente, Termine und Zahlungsübersichten gemeinsam verwalten."
+      ],
+      [
+        "Kann ich mich hier am CRM anmelden?",
+        "Dies ist die Projekt- und Supportwebsite. Für Zugang zum Arbeitsbereich wende dich an die Administration deiner Organisation. Projekt- und Einrichtungsfragen kannst du per E-Mail stellen."
+      ],
+      [
+        "Wie melde ich ein Problem?",
+        "Beschreibe die betroffene Ansicht, Browserversion, das erwartete und das tatsächliche Verhalten. Entferne vorher Konto-, Kunden-, Studierenden- und Dokumentendaten."
+      ],
+      [
+        "Wer bearbeitet Anfragen zu Vorgangs- und Dokumentendaten?",
+        "Wende dich an die für deine CRM-Installation zuständige Organisation. Diese Projektwebsite greift weder auf die CRM-Datenbank noch auf deine Datensätze zu."
+      ]
+    ]
+  },
+  "privacy": {
+    "tr": [
+      [
+        "Kapsam ve iletişim",
+        "Bu açıklama aozkul.github.io/kernora/ adresindeki proje tanıtım, destek ve gizlilik sayfaları içindir. Bu sayfaların iletişim kişisi Ali Orkun Özkul’dur: ali.ozkul@icloud.com."
+      ],
+      [
+        "Tanıtım sitesinin işleyişi",
+        "Bu sayfalarda kullanıcı hesabı, belge yükleme, ödeme veya iletişim formu bulunmaz. Sayfalar CRM API’sine ve veritabanına bağlanmaz; müşteri, öğrenci ve operasyon kayıtlarına erişmez."
+      ],
+      [
+        "Ayrı CRM ve portal kurulumu",
+        "Kernora CRM ve portal kurulumu; hesap, kayıt, başvuru, belge, ödeme notları ve mesaj verileri işleyebilir. Kullanılan hizmetler, erişim yetkileri ve saklama süreleri ilgili kurulumu işleten kurumun yapılandırmasına ve gizlilik açıklamasına bağlıdır. Bu tanıtım sitesinin açıklaması o kurulumun politikasının yerine geçmez."
+      ]
+    ],
+    "en": [
+      [
+        "Scope and contact",
+        "This notice covers the project overview, support and privacy pages at aozkul.github.io/kernora/. The contact for these pages is Ali Orkun Özkul: ali.ozkul@icloud.com."
+      ],
+      [
+        "How the showcase works",
+        "These pages have no user accounts, document uploads, payments or contact forms. They do not connect to the CRM API or database and do not access client, student or operational records."
+      ],
+      [
+        "Separate CRM and portal deployments",
+        "A Kernora CRM and portal deployment may process account, record, application, document, payment-note and message data. Enabled services, access controls and retention periods depend on the operating organisation’s configuration and privacy notice. This showcase notice does not replace that deployment’s policy."
+      ]
+    ],
+    "de": [
+      [
+        "Geltungsbereich und Kontakt",
+        "Diese Hinweise gelten für die Projekt-, Support- und Datenschutzseiten unter aozkul.github.io/kernora/. Ansprechpartner für diese Seiten ist Ali Orkun Özkul: ali.ozkul@icloud.com."
+      ],
+      [
+        "Funktionsweise der Projektwebsite",
+        "Diese Seiten bieten keine Benutzerkonten, Dokumenten-Uploads, Zahlungen oder Kontaktformulare. Sie verbinden sich nicht mit der CRM-API oder Datenbank und greifen nicht auf Kunden-, Studierenden- oder operative Daten zu."
+      ],
+      [
+        "Separate CRM- und Portalinstallationen",
+        "Eine Kernora-CRM- und Portalinstallation kann Konto-, Kontakt-, Bewerbungs-, Dokumenten-, Zahlungsnotiz- und Nachrichtendaten verarbeiten. Aktive Dienste, Zugriffsrechte und Aufbewahrungsfristen richten sich nach der Konfiguration und den Datenschutzhinweisen der betreibenden Organisation. Diese Erklärung ersetzt deren Datenschutzhinweise nicht."
+      ]
+    ]
+  },
+  "aliases": [
+    [
+      "support.html",
+      "tr",
+      "support"
+    ],
+    [
+      "privacy.html",
+      "tr",
+      "privacy"
+    ],
+    [
+      "index-en.html",
+      "en",
+      "home"
+    ],
+    [
+      "index-de.html",
+      "de",
+      "home"
+    ],
+    [
+      "support-en.html",
+      "en",
+      "support"
+    ],
+    [
+      "privacy-en.html",
+      "en",
+      "privacy"
+    ],
+    [
+      "support-de.html",
+      "de",
+      "support"
+    ],
+    [
+      "privacy-de.html",
+      "de",
+      "privacy"
+    ]
+  ]
+}
