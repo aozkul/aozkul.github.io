@@ -27,3 +27,36 @@ html{scroll-padding-top:calc(var(--header-height) + 24px)}
 @media(max-width:350px){.header-inner .brand-name{display:none}.desktop-nav{grid-template-columns:minmax(0,1fr)}.desktop-nav>a{min-height:49px}.nav-caption{padding-bottom:8px}}
 @media(prefers-reduced-motion:reduce){.site-header,.desktop-nav,.desktop-nav>a,.nav-arrow{transition:none!important}}
 @media print{.site-header{position:static;background:none;box-shadow:none}.desktop-nav,.nav-backdrop,.site-header:after{display:none!important}}
+/* CV-backed case studies: contribution, business outcome and delivery approach. */
+.impact-heading{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end}
+.impact-heading h2{margin:0}.impact-intro{max-width:530px;margin:0;color:var(--muted);font-size:15px;line-height:1.8}
+.impact-list,.impact-other{gap:20px;align-items:stretch}
+.impact-card{min-width:0;padding:28px;display:flex;flex-direction:column;background:var(--surface);border-radius:24px}
+.impact-card-metric{background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 7%,var(--surface)),var(--surface) 65%)}
+.impact-card .impact-category{display:flex;gap:12px;align-items:baseline;font:10px/1.6 ui-monospace,monospace;letter-spacing:.06em;margin:0 0 28px;color:var(--muted)}
+.impact-category>span{color:var(--accent);font-size:11px}
+.impact-metric{padding-bottom:25px;margin-bottom:24px;border-bottom:1px solid var(--line)}
+.impact-card .impact-value{font-size:clamp(42px,4.3vw,60px);font-weight:450;line-height:1.1;letter-spacing:-.065em;margin:0 0 10px;color:var(--accent)}
+.impact-card .impact-metric-label{margin:0;font-size:12px;color:var(--muted)}
+.impact-card h3{font-size:21px;letter-spacing:-.025em;line-height:1.35;font-weight:550;margin:0 0 26px;min-height:2.7em}
+.impact-story{margin:0 0 28px;display:grid;gap:23px}
+.impact-story dt{font-size:11px;font-weight:650;letter-spacing:.03em;margin-bottom:7px;color:var(--ink)}
+.impact-story dd{margin:0;color:var(--muted);font-size:14px;line-height:1.75}
+.impact-tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:20px 0 0;margin:auto 0 0;border-top:1px solid var(--line)}
+.impact-tags li{max-width:100%;padding:4px 9px;border-radius:6px;background:color-mix(in srgb,var(--accent) 7%,transparent);color:var(--muted);font:10px/1.6 ui-monospace,monospace}
+.impact-note{color:var(--muted);font-size:11px;line-height:1.8;margin:17px 0 0}
+.impact-subheading{margin-top:64px}.impact-subheading .eyebrow{margin-bottom:14px}
+.impact-subheading h3,.impact-delivery h3{font-weight:500;letter-spacing:-.035em;font-size:clamp(25px,2.6vw,34px);line-height:1.25;margin:0}
+.impact-other{margin-top:28px}
+.impact-delivery{margin-top:64px;padding-top:40px;border-top:1px solid var(--line)}
+.impact-delivery .eyebrow{margin-bottom:14px}
+.impact-process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;padding:0;margin:38px 0 0;list-style:none;counter-reset:delivery}
+.impact-process li{counter-increment:delivery;border-top:1px solid var(--line);padding-top:21px}
+.impact-process li:before{content:counter(delivery,decimal-leading-zero);font:12px ui-monospace,monospace;color:var(--accent)}
+.impact-process h4{font-size:15px;line-height:1.5;font-weight:550;margin:17px 0 9px}
+.impact-process p{font-size:13px;line-height:1.8;color:var(--muted);margin:0}
+@media(min-width:751px) and (max-width:1000px){.impact-card{padding:20px}.impact-card h3{font-size:19px}.impact-story dd{font-size:13px}.impact-card .impact-category{font-size:9px;gap:8px}.impact-list,.impact-other{gap:12px}}
+@media(max-width:900px){.impact-process{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:750px){.impact-heading{grid-template-columns:1fr;gap:22px}.impact-list{margin-top:30px}.impact-list,.impact-other{gap:16px}.impact-card{padding:26px}.impact-card h3{min-height:0;margin-bottom:23px}.impact-card .impact-value{font-size:55px}.impact-card .impact-category{margin-bottom:24px}.impact-subheading,.impact-delivery{margin-top:48px}.impact-story{gap:19px}.impact-intro{font-size:14px}}
+@media(max-width:440px){.impact-process{grid-template-columns:1fr;gap:25px}.impact-card{padding:23px}.impact-note{font-size:10px}}
+@media print{.impact-card{break-inside:avoid;background:none}.impact-delivery{break-inside:avoid}.impact-list,.impact-other{gap:12px}.impact-card{padding:15px}}

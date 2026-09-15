@@ -62,11 +62,23 @@
       const body=el('div','career-body');body.append(el('h3','',job.role),el('p','career-company',job.company+' · '+job.city),el('p','career-text',local(job.text)));
       item.append(date,body);return item;
     }));
-    document.getElementById('impact-list').replaceChildren(...(d.impact || []).map(p=>{
-      const a=el('article','impact-card');a.append(el('p','impact-value',p.value),el('h3','',local(p.title)),el('p','',local(p.text)),el('p','impact-tech',p.tech));return a;
-    }));
-    document.getElementById('impact-other').replaceChildren(...(d.otherImpact || []).map(p=>{
-      const a=el('article','impact-detail');a.append(el('h3','',p.title),el('p','',local(p.text)));return a;
+    const impactCard=(p,index)=>{
+      const a=el('article','impact-card'+(p.value?' impact-card-metric':'')),id='impact-case-'+index;
+      a.setAttribute('aria-labelledby',id);
+      const category=el('p','impact-category'),number=el('span','',String(index).padStart(2,'0'));
+      number.setAttribute('aria-hidden','true');category.append(number,document.createTextNode(local(p.category)));a.append(category);
+      if(p.value){const metric=el('div','impact-metric');metric.append(el('p','impact-value',p.value),el('p','impact-metric-label',local(p.metric)));a.append(metric);}
+      const title=el('h3','',local(p.title));title.id=id;a.append(title);
+      const story=el('dl','impact-story');
+      for(const key of ['contribution','outcome']){const row=el('div');row.append(el('dt','',t('impact.'+key)),el('dd','',local(p[key])));story.append(row);}
+      const tags=el('ul','impact-tags');if(p.tech)tags.setAttribute('aria-label',t('impact.technologies'));
+      for(const tag of p.tech || local(p.tags) || [])tags.append(el('li','',tag));
+      a.append(story,tags);return a;
+    };
+    document.getElementById('impact-list').replaceChildren(...(d.impact || []).map((p,i)=>impactCard(p,i+1)));
+    document.getElementById('impact-other').replaceChildren(...(d.otherImpact || []).map((p,i)=>impactCard(p,i+1+(d.impact || []).length)));
+    document.getElementById('impact-delivery').replaceChildren(...(d.impactDelivery || []).map(p=>{
+      const item=el('li');item.append(el('h4','',local(p.title)),el('p','',local(p.text)));return item;
     }));
     document.getElementById('skills-list').replaceChildren(...(d.skills || []).map(skill=>el('span','skill-chip',skill)));
     document.getElementById('certificates-list').replaceChildren(...(d.certificates || []).map(c=>el('li','',c)));

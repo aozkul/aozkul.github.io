@@ -129,6 +129,16 @@
     'career.kicker':'04 / DENEYİM', 'career.title':'Sistemlerden iş değerine.',
     'career.intro':'Telekom ve kontrol sistemlerinden bulut mimarilerine uzanan profesyonel deneyim.',
     'impact.kicker':'05 / SONUÇLAR', 'impact.title':'Ölçülebilir katkı.',
+    "impact.intro":"Üretim süreçlerinden veri altyapısına: geliştirdiğim sistemlerin maliyet, izlenebilirlik ve operasyonel güvenilirlik üzerindeki somut sonuçları.",
+    "impact.contribution":"Katkım",
+    "impact.outcome":"İş sonucu",
+    "impact.technologies":"Teknolojiler",
+    "impact.more.kicker":"OPERASYONEL KATKI",
+    "impact.more.title":"Görünür süreçler. Güvenilir sistemler.",
+    "impact.delivery.kicker":"TEKNİK LİDERLİK",
+    "impact.delivery.title":"İhtiyaçtan canlıya, uçtan uca.",
+    "impact.delivery.intro":"İş paydaşları ile mühendislik ekipleri arasında; gereksinimleri netleştiren, teknik bağımlılıkları yöneten ve teslimatı destekleyen bir çalışma yaklaşımı.",
+    "impact.note":"Tutarlar yaklaşık değerlerdir. Tool Tracking için tasarruf yıllıktır; diğer iki proje için dönem belirtilmemiştir.",
     'credentials.kicker':'06 / BİLGİ BİRİKİMİ', 'credentials.title':'Teknoloji, eğitim ve gelişim.',
     'credentials.skills':'Teknik yetkinlikler', 'credentials.certificates':'Sertifikalar', 'credentials.education':'Eğitim', 'credentials.languages':'Diller',
     'education.degree':'Elektrik-Elektronik Mühendisliği', 'education.school':'Uludağ Üniversitesi · Ocak 2009',
@@ -165,6 +175,16 @@
     'career.kicker':'04 / EXPERIENCE', 'career.title':'From systems to business value.',
     'career.intro':'Professional experience spanning telecom and control systems through to cloud architectures.',
     'impact.kicker':'05 / IMPACT', 'impact.title':'Measurable contribution.',
+    "impact.intro":"From production processes to data infrastructure: the tangible results of systems I built across cost, traceability and operational reliability.",
+    "impact.contribution":"My contribution",
+    "impact.outcome":"Business outcome",
+    "impact.technologies":"Technologies",
+    "impact.more.kicker":"OPERATIONAL IMPACT",
+    "impact.more.title":"Visible processes. Reliable systems.",
+    "impact.delivery.kicker":"TECHNICAL LEADERSHIP",
+    "impact.delivery.title":"From requirements to go-live.",
+    "impact.delivery.intro":"A bridge between business stakeholders and engineering teams, clarifying requirements, managing technical dependencies and supporting delivery.",
+    "impact.note":"Figures are approximate. Tool Tracking savings are annual; no period is specified for the other two projects.",
     'credentials.kicker':'06 / KNOWLEDGE', 'credentials.title':'Technology, education and growth.',
     'credentials.skills':'Technical skills', 'credentials.certificates':'Certifications', 'credentials.education':'Education', 'credentials.languages':'Languages',
     'education.degree':'Electrical-Electronical Engineering', 'education.school':'Uludag University · January 2009',
@@ -180,15 +200,209 @@
     {role:'Software Developer',company:'Netas',city:'Istanbul',dates:{tr:'Haz 2009 – Eyl 2011',en:'Jun 2009 – Sep 2011'},text:{tr:'Ses ve veri trafiği taşıyan ağ anahtarlama sistemleri. SIP ve ISDN çağrı kontrolü, IP tabanlı iletişim arayüzleri ve backend bileşenleri; performans ve kararlılık iyileştirmeleri.',en:'Network switching systems for voice and data traffic. SIP and ISDN call control, IP communication interfaces and backend components; performance and stability improvements.'}}
   ];
   d.impact = [
-    {value:'~€750K',title:{tr:'Yıllık maliyet tasarrufu',en:'Annual cost savings'},text:{tr:'Maliyet hesaplamalı gerçek zamanlı Tool Tracking System.',en:'Real-time Tool Tracking System with cost calculation.'},tech:'Vue.js · Go · Python · RabbitMQ · Docker'},
-    {value:'~€350K',title:{tr:'Makine bağlantılarında tasarruf',en:'Machine connectivity savings'},text:{tr:'Gerçek zamanlı endüstriyel veri akışı sağlayan mikroservisler.',en:'Microservices enabling real-time industrial data streaming.'},tech:'Go · Kafka · OPC'},
-    {value:'~€200K',title:{tr:'Veri altyapısında tasarruf',en:'Data infrastructure savings'},text:{tr:'Verimlilik ve güvenilirliği artıran ölçeklenebilir veri altyapısı.',en:'Scalable data infrastructure improving efficiency and reliability.'},tech:'Kafka · MQTT · Redis · CI/CD · Monitoring'}
-  ];
+  {
+    "value": "~€750K",
+    "metric": {
+      "tr": "Yıllık maliyet tasarrufu",
+      "en": "Annual cost savings"
+    },
+    "category": {
+      "tr": "TAKIM TAKİBİ",
+      "en": "TOOL TRACKING"
+    },
+    "title": {
+      "tr": "Gerçek zamanlı takım takibi",
+      "en": "Real-time tool tracking"
+    },
+    "contribution": {
+      "tr": "Maliyet hesaplamasını gerçek zamanlı takım takibiyle birleştiren Tool Tracking System’i geliştirdim.",
+      "en": "Developed a Tool Tracking System combining real-time tool tracking with cost calculation."
+    },
+    "outcome": {
+      "tr": "Takip ve maliyet hesaplama çözümüyle yaklaşık €750 bin yıllık maliyet tasarrufu sağlandı.",
+      "en": "The tracking and cost-calculation solution delivered approximately €750K in annual cost savings."
+    },
+    "tech": [
+      "Vue.js",
+      "Go",
+      "Python",
+      "RabbitMQ",
+      "Docker"
+    ]
+  },
+  {
+    "value": "~€350K",
+    "metric": {
+      "tr": "Makine bağlantılarında tasarruf",
+      "en": "Machine connectivity savings"
+    },
+    "category": {
+      "tr": "ENDÜSTRİYEL ENTEGRASYON",
+      "en": "INDUSTRIAL INTEGRATION"
+    },
+    "title": {
+      "tr": "Makineden veri akışına",
+      "en": "From machines to data streams"
+    },
+    "contribution": {
+      "tr": "Go, Kafka ve OPC entegrasyonuyla makine bağlantılarını sağlayan mikroservisler geliştirdim.",
+      "en": "Built machine connectivity microservices using Go, Kafka and OPC integration."
+    },
+    "outcome": {
+      "tr": "Gerçek zamanlı endüstriyel veri akışı mümkün hale geldi; yaklaşık €350 bin tasarruf sağlandı.",
+      "en": "Enabled real-time industrial data streaming and delivered approximately €350K in savings."
+    },
+    "tech": [
+      "Go",
+      "Kafka",
+      "OPC"
+    ]
+  },
+  {
+    "value": "~€200K",
+    "metric": {
+      "tr": "Veri altyapısında tasarruf",
+      "en": "Data infrastructure savings"
+    },
+    "category": {
+      "tr": "VERİ MÜHENDİSLİĞİ",
+      "en": "DATA ENGINEERING"
+    },
+    "title": {
+      "tr": "Ölçeklenebilir veri altyapısı",
+      "en": "Scalable data infrastructure"
+    },
+    "contribution": {
+      "tr": "Kafka, MQTT ve Redis temelli; CI/CD ve izleme bileşenleri içeren ölçeklenebilir veri altyapısını tasarladım ve hayata geçirdim.",
+      "en": "Designed and implemented scalable data infrastructure with Kafka, MQTT, Redis, CI/CD and monitoring."
+    },
+    "outcome": {
+      "tr": "Sistem verimliliği ve güvenilirliğindeki iyileştirmelerle yaklaşık €200 bin tasarruf sağlandı.",
+      "en": "Improved system efficiency and reliability, delivering approximately €200K in savings."
+    },
+    "tech": [
+      "Kafka",
+      "MQTT",
+      "Redis",
+      "CI/CD",
+      "Monitoring"
+    ]
+  }
+];
   d.otherImpact = [
-    {title:'TETRIS',text:{tr:'Uçtan uca üretim takibi, yaşam döngüsü izlenebilirliği ve darboğazların azaltılması.',en:'End-to-end production tracking, lifecycle traceability and reduced bottlenecks.'}},
-    {title:'SAP · Power BI · Tableau',text:{tr:'Parti takibi, malzeme akışı şeffaflığı ve BI destekli kararlar için ERP entegre üretim uygulaması.',en:'ERP-integrated production application for batch tracking, material-flow transparency and BI-driven decisions.'}},
-    {title:'Python · Selenium',text:{tr:'Manuel test yükünü azaltan, sistem kararlılığını ve sürüm hızını iyileştiren otomasyon ve web testleri.',en:'Automation and web testing to reduce manual QA work and improve stability and release cycles.'}}
-  ];
+  {
+    "category": {
+      "tr": "ÜRETİM İZLENEBİLİRLİĞİ",
+      "en": "PRODUCTION TRACEABILITY"
+    },
+    "title": "TETRIS",
+    "contribution": {
+      "tr": "Üretim akışının gerçek zamanlı optimizasyonunu ve sistemler arası tam yaşam döngüsü izlenebilirliğini sağlayan uçtan uca takip sistemi geliştirdim.",
+      "en": "Developed an end-to-end tracking system enabling real-time production-flow optimisation and full lifecycle traceability across systems."
+    },
+    "outcome": {
+      "tr": "Her bir parçanın üretim sürecinde operasyonel görünürlük arttı, darboğazlar azaldı ve üretim verimliliği iyileşti.",
+      "en": "Increased operational visibility, reduced bottlenecks and improved production efficiency for every individual part."
+    },
+    "tags": {
+      "tr": [
+        "Uçtan uca takip",
+        "Gerçek zamanlı üretim"
+      ],
+      "en": [
+        "End-to-end tracking",
+        "Real-time production"
+      ]
+    }
+  },
+  {
+    "category": {
+      "tr": "ERP & İŞ ZEKÂSI",
+      "en": "ERP & BUSINESS INTELLIGENCE"
+    },
+    "title": {
+      "tr": "ERP entegre üretim uygulaması",
+      "en": "ERP-integrated production app"
+    },
+    "contribution": {
+      "tr": "SAP ile entegre çalışan bir üretim uygulaması tasarladım; parti takibi ve malzeme akışını iş zekâsı destekli kararlarla birleştirdim.",
+      "en": "Designed an SAP-integrated production application connecting batch tracking and material flow with business-intelligence-driven decisions."
+    },
+    "outcome": {
+      "tr": "Parti takibi ve malzeme akışında şeffaflık sağlandı. Power BI ve Tableau ile veri destekli karar alma mümkün hale geldi.",
+      "en": "Enabled batch tracking, material-flow transparency and data-driven decision-making with Power BI and Tableau."
+    },
+    "tech": [
+      "SAP",
+      "Power BI",
+      "Tableau"
+    ]
+  },
+  {
+    "category": {
+      "tr": "KALİTE & OTOMASYON",
+      "en": "QUALITY & AUTOMATION"
+    },
+    "title": {
+      "tr": "Test otomasyonu",
+      "en": "Test automation"
+    },
+    "contribution": {
+      "tr": "Python ve Selenium kullanarak otomasyon ve web testi çözümlerini hayata geçirdim.",
+      "en": "Implemented automation and web testing solutions using Python and Selenium."
+    },
+    "outcome": {
+      "tr": "Manuel kalite kontrol yükü azaldı, sistem kararlılığı arttı ve sürüm döngüleri hızlandı.",
+      "en": "Reduced manual QA effort, increased system stability and accelerated release cycles."
+    },
+    "tech": [
+      "Python",
+      "Selenium"
+    ]
+  }
+];
+  d.impactDelivery = [
+  {
+    "title": {
+      "tr": "İhtiyacı netleştirme",
+      "en": "Clarify the need"
+    },
+    "text": {
+      "tr": "İş ihtiyaçlarını teknik gereksinimlere, çözüm önerilerine ve kabul kriterlerine dönüştürme.",
+      "en": "Translate business needs into technical requirements, solution concepts and acceptance criteria."
+    }
+  },
+  {
+    "title": {
+      "tr": "Mimari & entegrasyon",
+      "en": "Architecture & integration"
+    },
+    "text": {
+      "tr": "API’ler, veri akışları ve üretim sistemleri arasındaki bağımlılıkları ele alarak ölçeklenebilir çözümler tasarlama.",
+      "en": "Design scalable solutions while managing dependencies across APIs, data flows and production systems."
+    }
+  },
+  {
+    "title": {
+      "tr": "Teslimat & canlıya geçiş",
+      "en": "Delivery & go-live"
+    },
+    "text": {
+      "tr": "Backlog netleştirme, teknik yapılabilirlik, test desteği ve canlıya geçiş koordinasyonuna katkı.",
+      "en": "Support backlog refinement, technical feasibility analysis, testing and go-live coordination."
+    }
+  },
+  {
+    "title": {
+      "tr": "Sürekli iyileştirme",
+      "en": "Continuous improvement"
+    },
+    "text": {
+      "tr": "Sürüm sonrasında otomasyon, performans, güvenilirlik ve operasyonel verimlilik fırsatlarını belirleme.",
+      "en": "Identify post-release opportunities to improve automation, performance, reliability and operational efficiency."
+    }
+  }
+];
   d.skills = ['Python','Go','.NET / .NET Core','C / C++','Node.js / JavaScript','AngularJS','Vue.js','SQL / T-SQL','Kafka','RabbitMQ','MQTT','Redis','Azure','Docker','CI/CD','Microservices / APIs','SAP','Power BI / Tableau','Selenium','Product ownership','Business analysis','Agile / Scrum','User stories / Acceptance criteria','KPI definition / Continuous improvement'];
   d.certificates = ['Introduction to Data Science in Python — University of Michigan','Open Source Project Management — Linux Foundation','SQL for Data Science — University of California','Oracle Database: SQL & PL/SQL Fundamentals — Bilginc IT Academy','Advanced Communication Skills — Netas','Software and Database Specialist — Bilge Adam'];
 })();
