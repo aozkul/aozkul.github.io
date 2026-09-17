@@ -1,9 +1,162 @@
-/* Portfolio content: public repositories and professional details from the supplied CV.
-   Do not put credentials, private repository data or a full personal CV in this file. */
+/* Public portfolio content, aligned with the owner-supplied Germany CV.
+   Keep contact credentials, private repository data and full CV files out of this file. */
 (() => {
   const d = window.PORTFOLIO_DATA;
   if (!d) return;
-  Object.assign(d.profile, {name:'Ali Orkun Özkul', email:'ali.ozkul@icloud.com', linkedin:null, resumeUrl:null});
+  Object.assign(d.profile, {
+  "name": "Ali Orkun Özkul",
+  "email": "ali.ozkul@icloud.com",
+  "linkedin": "https://www.linkedin.com/in/aliorkunozkul/",
+  "resumeUrl": null
+});
+  Object.assign(d.translations.tr, {
+  "nav.home": "Başlangıç",
+  "nav.career": "Deneyim",
+  "nav.impact": "Sonuçlar",
+  "nav.credentials": "Yetkinlikler",
+  "nav.contact": "İletişim",
+  "nav.contents": "BU SAYFADA",
+  "nav.menu": "Menü",
+  "projects.empty": "Aramana uygun proje bulunamadı.",
+  "universe.tag": "BAĞIMSIZ DİJİTAL ÜRÜNLER",
+  "universe.caption": "BİR FİKİR. BİR DENEYİM. BİR ÜRÜN.",
+  "hero.eyebrow": "SENIOR / LEAD SOFTWARE ENGINEER",
+  "hero.description": "Endüstriyel yazılım, bulut ve veri platformları ile telekom alanlarında 15+ yıllık deneyim. Go ve Python geliştirmeyi mimari sahiplik, gereksinim analizi ve uçtan uca teslimatla birleştiriyorum.",
+  "hero.secondary": "Deneyimimi incele",
+  "projects.title": "Projelerim, tek bir yerde.",
+  "projects.description": "Günlük hayatı kolaylaştıran uygulamalardan iş süreçlerini bir araya getiren platformlara. Tasarladığım ürünler ve web projeleri.",
+  "projects.note": "Projelerin tanıtım, destek ve gizlilik bilgilerine kendi sayfalarından ulaşabilirsin.",
+  "projects.website": "PROJE WEB SAYFASI",
+  "projects.visit": "Proje sayfasını aç",
+  "projects.source": "GitHub deposu",
+  "projects.search": "Proje veya teknoloji ara",
+  "projects.filter.other": "Diğer",
+  "projects.count": "{count} / {total} proje",
+  "projects.sync.loading": "Proje listesi güncelleniyor…",
+  "projects.sync.live": "Proje listesi güncel",
+  "projects.sync.saved": "Uygulamalar ve web projeleri",
+  "expertise.one.text": "Endüstri 4.0 mikroservisleri, REST API’ler ve veri yoğun sistemler. Mimari ve teknoloji seçiminden Go/Python geliştirmeye, entegrasyondan canlıya geçişe kadar uygulamalı mühendislik.",
+  "expertise.two.text": "Bosch genelinde kullanım için tasarlanan üretim veri platformları: veri toplama, yedekleme ve işleme. Databricks ve Azure Functions ile yapay zekâ girişimlerine kullanılabilir veri hazırlama.",
+  "expertise.three.text": "Beş kişilik yazılım ekibine teknik liderlik. Kod incelemeleri, mentorluk, iş paketlerine ayırma ve önceliklendirme; ekipler arası koordinasyon ve canlıya geçişte teknik sahiplik.",
+  "expertise.one.tags": "Go / Python / REST APIs / Microservices",
+  "expertise.two.tags": "Databricks / Azure Functions / Kafka / OPC",
+  "expertise.three.tags": "Code review / Mentoring / Agile / Delivery",
+  "about.text1": "Ben Ali Orkun Özkul. Stuttgart’ta Robert Bosch GmbH bünyesinde Senior Software Engineer olarak çalışıyorum. Bosch genelinde kullanım için tasarlanan üretim veri platformlarının mimarisini, backend servislerini ve entegrasyonlarını geliştiriyorum.",
+  "about.text2": "Bursa’daki Lead Software Engineer görevimde beş kişilik bir yazılım ekibine teknik liderlik yaptım. Mimari sahipliği; kod inceleme, mentorluk ve uygulamalı geliştirmeyle birleştirerek tasarımdan canlıya geçişe kadar teknik teslimatı yönettim. Geçmişim endüstriyel yazılım, veri platformları ve telekom sistemlerini kapsıyor.",
+  "about.years": "YILLIK DENEYİM",
+  "about.work": "Yazılım, veri\n& teknik liderlik",
+  "contact.kicker": "İLETİŞİM",
+  "contact.title": "Birlikte çözüm\nüretelim.",
+  "contact.description": "Yazılım mimarisi, mikroservisler, veri platformları ve teknik liderlik hakkında e-posta veya LinkedIn üzerinden iletişime geçebilirsiniz.",
+  "meta.title": "Ali Orkun Özkul — Senior / Lead Software Engineer",
+  "meta.description": "Ali Orkun Özkul. Stuttgart merkezli Senior / Lead Software Engineer. 15+ yıl deneyim; yazılım mimarisi, mikroservisler, üretim veri platformları ve teknik liderlik.",
+  "career.current": "Güncel görev",
+  "career.contract": "Proje bazlı sözleşme",
+  "career.tags": "Teknolojiler ve çalışma alanları",
+  "career.kicker": "04 / DENEYİM",
+  "career.title": "Sistemlerden iş değerine.",
+  "career.intro": "Üretim verisi platformları, Endüstri 4.0 mikroservisleri ve telekom sistemlerinde 15+ yıllık deneyim; uygulamalı geliştirme ve teknik liderlik.",
+  "impact.kicker": "05 / SONUÇLAR",
+  "impact.title": "Ölçülebilir katkı.",
+  "impact.intro": "Bağımsız tasarım ve teknik devreye almadan üretim görünürlüğüne: seçili profesyonel projelerim ve iş sonuçları.",
+  "impact.contribution": "Katkım",
+  "impact.outcome": "İş sonucu",
+  "impact.technologies": "Teknolojiler",
+  "impact.more.kicker": "DİĞER PROFESYONEL PROJELER",
+  "impact.more.title": "İzlenebilirlik, karar desteği ve kalite.",
+  "impact.delivery.kicker": "TEKNİK LİDERLİK",
+  "impact.delivery.title": "İhtiyaçtan canlıya, uçtan uca.",
+  "impact.delivery.intro": "Beş kişilik bir yazılım ekibine teknik liderlik deneyimi: mimari ve teknoloji seçiminden kod inceleme ve mentorluğa, önceliklendirmeden canlıya geçiş sahipliğine.",
+  "impact.note": "Tool Tracking ve Machine Connectivity tutarları yaklaşık yıllık maliyet tasarruflarıdır.",
+  "credentials.kicker": "06 / BİLGİ BİRİKİMİ",
+  "credentials.title": "Teknoloji, eğitim ve gelişim.",
+  "credentials.skills": "Teknik yetkinlikler",
+  "credentials.certificates": "Seçili eğitimler",
+  "credentials.education": "Eğitim",
+  "credentials.languages": "Diller",
+  "education.degree": "Elektrik-Elektronik Mühendisliği · Lisans (B.Sc.)",
+  "education.school": "Uludağ Üniversitesi · 2009",
+  "languages.text": "Türkçe — Ana dil · İngilizce — Akıcı · Almanca — Başlangıç",
+  "projects.professional": "Profesyonel projeler ve iş sonuçları",
+  "expertise.one.title": "Yazılım mimarisi & backend",
+  "expertise.two.title": "Üretim verisi & bulut",
+  "impact.context": "BOSCH · BURSA, TÜRKİYE",
+  "contact.linkedin": "LinkedIn’de iletişime geç"
+});
+  Object.assign(d.translations.en, {
+  "nav.home": "Home",
+  "nav.career": "Experience",
+  "nav.impact": "Impact",
+  "nav.credentials": "Skills",
+  "nav.contact": "Contact",
+  "nav.contents": "ON THIS PAGE",
+  "nav.menu": "Menu",
+  "projects.empty": "No projects match your search.",
+  "universe.tag": "INDEPENDENT DIGITAL PRODUCTS",
+  "universe.caption": "AN IDEA. AN EXPERIENCE. A PRODUCT.",
+  "hero.eyebrow": "SENIOR / LEAD SOFTWARE ENGINEER",
+  "hero.description": "15+ years in industrial software, cloud and data platforms, and telecommunications. I combine hands-on Go and Python development with architecture ownership, requirements analysis and end-to-end delivery.",
+  "hero.secondary": "Explore my experience",
+  "projects.title": "My projects, in one place.",
+  "projects.description": "From everyday apps to platforms that connect business processes. Explore the products and web projects I design and build.",
+  "projects.note": "Visit each project for its overview, support and privacy information.",
+  "projects.website": "PROJECT WEBSITE",
+  "projects.visit": "Visit project website",
+  "projects.source": "GitHub repository",
+  "projects.search": "Search projects or technologies",
+  "projects.filter.other": "Other",
+  "projects.count": "{count} / {total} projects",
+  "projects.sync.loading": "Updating projects…",
+  "projects.sync.live": "Project list up to date",
+  "projects.sync.saved": "Apps and web projects",
+  "expertise.one.text": "Industry 4.0 microservices, REST APIs and data-intensive systems. Hands-on engineering from architecture and technology selection to Go/Python development, integration and rollout.",
+  "expertise.two.text": "Production-data platforms designed for global use across Bosch: collection, backup and processing. Preparing usable data for AI initiatives with Databricks and Azure Functions.",
+  "expertise.three.text": "Technical leadership of a five-person software team. Code reviews, mentoring, work breakdown and prioritisation; cross-team coordination and technical ownership through go-live.",
+  "expertise.one.tags": "Go / Python / REST APIs / Microservices",
+  "expertise.two.tags": "Databricks / Azure Functions / Kafka / OPC",
+  "expertise.three.tags": "Code review / Mentoring / Agile / Delivery",
+  "about.text1": "I’m Ali Orkun Özkul, a Senior Software Engineer at Robert Bosch GmbH in Stuttgart. I design architecture, develop backend services and implement integrations for production-data platforms intended for global use across Bosch.",
+  "about.text2": "As Lead Software Engineer in Bursa, I provided technical leadership to a five-person software team. I combined architecture ownership with code reviews, mentoring and hands-on development, owning technical delivery from design through go-live. My background spans industrial software, data platforms and telecom systems.",
+  "about.years": "YEARS OF EXPERIENCE",
+  "about.work": "Software, data\n& technical leadership",
+  "contact.kicker": "GET IN TOUCH",
+  "contact.title": "Let’s build\na solution.",
+  "contact.description": "Get in touch by email or LinkedIn about software architecture, microservices, data platforms and technical leadership.",
+  "meta.title": "Ali Orkun Özkul — Senior / Lead Software Engineer",
+  "meta.description": "Ali Orkun Özkul. Stuttgart-based Senior / Lead Software Engineer with 15+ years of experience in software architecture, microservices, production-data platforms and technical leadership.",
+  "career.current": "Current role",
+  "career.contract": "Project-based contract",
+  "career.tags": "Technologies and focus areas",
+  "career.kicker": "04 / EXPERIENCE",
+  "career.title": "From systems to business value.",
+  "career.intro": "15+ years across production-data platforms, Industry 4.0 microservices and telecommunications, combining hands-on development and technical leadership.",
+  "impact.kicker": "05 / IMPACT",
+  "impact.title": "Measurable contribution.",
+  "impact.intro": "From independent design and technical rollout to production visibility: selected professional projects and business outcomes.",
+  "impact.contribution": "My contribution",
+  "impact.outcome": "Business outcome",
+  "impact.technologies": "Technologies",
+  "impact.more.kicker": "ADDITIONAL PROFESSIONAL PROJECTS",
+  "impact.more.title": "Traceability, decision support and quality.",
+  "impact.delivery.kicker": "TECHNICAL LEADERSHIP",
+  "impact.delivery.title": "From requirements to go-live.",
+  "impact.delivery.intro": "Experience leading a five-person software team: architecture and technology selection, code reviews and mentoring, prioritisation and go-live ownership.",
+  "impact.note": "Tool Tracking and Machine Connectivity figures are approximate annual cost savings.",
+  "credentials.kicker": "06 / KNOWLEDGE",
+  "credentials.title": "Technology, education and growth.",
+  "credentials.skills": "Technical skills",
+  "credentials.certificates": "Selected training",
+  "credentials.education": "Education",
+  "credentials.languages": "Languages",
+  "education.degree": "B.Sc. Electrical-Electronics Engineering",
+  "education.school": "Uludag University · 2009",
+  "languages.text": "Turkish — Native · English — Fluent · German — Beginner",
+  "projects.professional": "Professional projects and business impact",
+  "expertise.one.title": "Software architecture & backend",
+  "expertise.two.title": "Production data & cloud",
+  "impact.context": "BOSCH · BURSA, TURKEY",
+  "contact.linkedin": "Connect on LinkedIn"
+});
   d.projects = [
   {
     "name": "UFFF",
@@ -16,7 +169,8 @@
     "description": {
       "tr": "Sesini çizgi film karakterine dönüştür. Kendi sahneni yarat, hareketlendir ve paylaş.",
       "en": "Turn your voice into a cartoon character. Create, animate and share your own scene."
-    }
+    },
+    "visibility": "public"
   },
   {
     "name": "PaceQ",
@@ -29,7 +183,8 @@
     "description": {
       "tr": "Odak seansları, esnek molalar ve sakin bir çalışma ritmi.",
       "en": "Focused sessions, flexible breaks and a calmer working rhythm."
-    }
+    },
+    "visibility": "public"
   },
   {
     "name": "NotNow",
@@ -42,7 +197,8 @@
     "description": {
       "tr": "İstek anında kendine kısa bir mola ver. Küçük adımlarla, kendi hızında.",
       "en": "Take a short pause when a craving arrives. Small steps, at your own pace."
-    }
+    },
+    "visibility": "public"
   },
   {
     "name": "PayGuard",
@@ -55,7 +211,8 @@
     "description": {
       "tr": "Abonelikler, garantiler ve iade tarihleri. Önemli günler tek bir yerde.",
       "en": "Subscriptions, warranties and return dates. Keep the important dates together."
-    }
+    },
+    "visibility": "public"
   },
   {
     "name": "VocabLens",
@@ -68,7 +225,8 @@
     "description": {
       "tr": "Gördüğün kelimeleri keşfet. Çeviri ve kişisel kelime kartlarıyla öğren.",
       "en": "Discover the words around you. Learn with translations and personal word cards."
-    }
+    },
+    "visibility": "public"
   },
   {
     "name": "MathRush",
@@ -81,7 +239,8 @@
     "description": {
       "tr": "Matematiğe küçük bir mola. Uygulama bilgileri, destek ve gizlilik.",
       "en": "A little time for maths. App information, support and privacy."
-    }
+    },
+    "visibility": "public"
   },
   {
     "name": "NuThings_v1",
@@ -95,117 +254,25 @@
       "tr": "Doğal ürünler için tasarlanmış modern katalog ve alışveriş deneyimi projesi.",
       "en": "A modern catalogue and shopping experience project for natural products."
     },
-    "logo": true
+    "logo": true,
+    "visibility": "public"
+  },
+  {
+    "name": "Kernora",
+    "mark": "K",
+    "language": "TypeScript",
+    "tone": "blue",
+    "icon": "assets/icons/kernora-original.png",
+    "page": "https://aozkul.github.io/kernora/",
+    "pageEn": "https://aozkul.github.io/kernora/en/",
+    "catalogOnly": true,
+    "description": {
+      "tr": "Kayıtlar, süreçler, belgeler ve ekip görevleri. Danışmanlık ve operasyon için ortak CRM çalışma alanı.",
+      "en": "Records, processes, documents and team tasks. A shared CRM workspace for consultancy and operations."
+    },
+    "visibility": "public"
   }
-,
-{
-  "name": "Kernora",
-  "mark": "K",
-  "language": "TypeScript",
-  "tone": "blue",
-  "icon": "assets/icons/kernora-original.png",
-  "page": "https://aozkul.github.io/kernora/",
-  "pageEn": "https://aozkul.github.io/kernora/en/",
-  "catalogOnly": true,
-  "description": {
-    "tr": "Kayıtlar, süreçler, belgeler ve ekip görevleri. Danışmanlık ve operasyon için ortak CRM çalışma alanı.",
-    "en": "Records, processes, documents and team tasks. A shared CRM workspace for consultancy and operations."
-  }
-}
-].map(p => ({...p, visibility:'public'}));
-  const tr = {
-    'nav.home':'Başlangıç', 'nav.career':'Deneyim', 'nav.impact':'Sonuçlar', 'nav.credentials':'Yetkinlikler', 'nav.contact':'İletişim', 'nav.contents':'BU SAYFADA', 'nav.menu':'Menü',
-    'projects.empty':'Aramana uygun proje bulunamadı.',
-    'universe.tag':'BAĞIMSIZ DİJİTAL ÜRÜNLER', 'universe.caption':'BİR FİKİR. BİR DENEYİM. BİR ÜRÜN.',
-    'hero.eyebrow':'SENIOR SOFTWARE & DATA ENGINEER / TECHNICAL LEAD',
-    'hero.description':'Ölçeklenebilir mikroservisler, bulut mimarileri, API’ler ve veri odaklı dijital platformlar geliştiriyorum. İş ihtiyaçlarını teknik gereksinimlere ve ölçülebilir değer üreten çözümlere dönüştürüyorum.',
-    'hero.secondary':'Deneyimimi incele',
-    'projects.title':'Projelerim, tek bir yerde.',
-    'projects.description':'Günlük hayatı kolaylaştıran uygulamalardan iş süreçlerini bir araya getiren platformlara. Tasarladığım ürünler ve web projeleri.',
-    'projects.note':'Projelerin tanıtım, destek ve gizlilik bilgilerine kendi sayfalarından ulaşabilirsin.',
-    'projects.website':'PROJE WEB SAYFASI', 'projects.visit':'Proje sayfasını aç', 'projects.source':'GitHub deposu',
-    'projects.search':'Proje veya teknoloji ara', 'projects.filter.other':'Diğer',
-    'projects.count':'{count} / {total} proje',
-    'projects.sync.loading':'Proje listesi güncelleniyor…', 'projects.sync.live':'Proje listesi güncel',
-    'projects.sync.saved':'Uygulamalar ve web projeleri',
-    'expertise.one.text':'Ölçeklenebilir mikroservisler, bulut mimarileri ve API entegrasyonları. Python, Go ve Azure ile kurumsal sistemlerde otomasyon, performans ve güvenilirlik.',
-    'expertise.two.text':'Endüstri 4.0 için veri mimarileri, makine bağlantıları ve gerçek zamanlı veri akışları. Üretim sistemleri, iş uygulamaları ve SAP entegrasyonları.',
-    'expertise.three.text':'İş analizi, ürün sahipliği, gereksinimler ve kabul kriterleri. Mimari kararlardan backlog netleştirmeye, Agile teslimattan canlıya geçişe kadar uçtan uca çalışma.',
-    'expertise.one.tags':'Python / Go / .NET / Azure / API',
-    'expertise.two.tags':'Kafka / RabbitMQ / MQTT / SQL / SAP',
-    'expertise.three.tags':'Product Ownership / Agile / Docker / CI/CD',
-    'about.text1':'Ben Ali Orkun Özkul. Stuttgart’ta Robert Bosch GmbH bünyesinde Senior Software Engineer olarak çalışıyorum. Profesyonel geçmişim; telekom yazılımları, biyomedikal kontrol sistemleri, endüstriyel veri platformları ve bulut çözümlerini kapsıyor.',
-    'about.text2':'Teknik liderlik ile uygulamalı yazılım geliştirmeyi birleştiriyorum. İş ihtiyaçlarını anlamak, teknik bağımlılıkları yönetmek ve güvenilir, ölçeklenebilir çözümleri ekiplerle birlikte teslim etmek çalışma yaklaşımımın merkezinde.',
-    'about.years':'KARİYER BAŞLANGICI', 'about.work':'Yazılım, veri\n& teknik liderlik',
-    'contact.kicker':'İLETİŞİM', 'contact.title':'Birlikte çözüm\nüretelim.',
-    'contact.description':'Yazılım, veri platformları ve teknik liderlik üzerine konuşmak için e-posta ile ulaşabilirsiniz.',
-    'meta.title':'Ali Orkun Özkul — Senior Software & Data Engineer / Technical Lead',
-    'meta.description':'Ali Orkun Özkul. Stuttgart merkezli Senior Software & Data Engineer / Technical Lead. Mikroservisler, bulut mimarileri, Endüstri 4.0 ve dijital ürünler.',
-    'career.current':'Güncel görev', 'career.contract':'Proje bazlı sözleşme', 'career.tags':'Teknolojiler ve çalışma alanları', 'career.kicker':'04 / DENEYİM', 'career.title':'Sistemlerden iş değerine.',
-    'career.intro':'Telekom ve biyomedikal kontrol sistemlerinden Endüstri 4.0 ve kurumsal bulut çözümlerine: yazılım geliştirme, veri mimarisi ve teknik liderlik.',
-    'impact.kicker':'05 / SONUÇLAR', 'impact.title':'Ölçülebilir katkı.',
-    "impact.intro":"Üretim süreçlerinden veri altyapısına: geliştirdiğim sistemlerin maliyet, izlenebilirlik ve operasyonel güvenilirlik üzerindeki somut sonuçları.",
-    "impact.contribution":"Katkım",
-    "impact.outcome":"İş sonucu",
-    "impact.technologies":"Teknolojiler",
-    "impact.more.kicker":"OPERASYONEL KATKI",
-    "impact.more.title":"Görünür süreçler. Güvenilir sistemler.",
-    "impact.delivery.kicker":"TEKNİK LİDERLİK",
-    "impact.delivery.title":"İhtiyaçtan canlıya, uçtan uca.",
-    "impact.delivery.intro":"İş paydaşları ile mühendislik ekipleri arasında; gereksinimleri netleştiren, teknik bağımlılıkları yöneten ve teslimatı destekleyen bir çalışma yaklaşımı.",
-    "impact.note":"Tutarlar yaklaşık değerlerdir. Tool Tracking için tasarruf yıllıktır; diğer iki proje için dönem belirtilmemiştir.",
-    'credentials.kicker':'06 / BİLGİ BİRİKİMİ', 'credentials.title':'Teknoloji, eğitim ve gelişim.',
-    'credentials.skills':'Teknik yetkinlikler', 'credentials.certificates':'Sertifikalar', 'credentials.education':'Eğitim', 'credentials.languages':'Diller',
-    'education.degree':'Elektrik-Elektronik Mühendisliği', 'education.school':'Uludağ Üniversitesi · Ocak 2009',
-    'languages.text':'Türkçe — Ana dil · İngilizce — Akıcı · Almanca — Başlangıç'
-  };
-  const en = {
-    'nav.home':'Home', 'nav.career':'Experience', 'nav.impact':'Impact', 'nav.credentials':'Skills', 'nav.contact':'Contact', 'nav.contents':'ON THIS PAGE', 'nav.menu':'Menu',
-    'projects.empty':'No projects match your search.',
-    'universe.tag':'INDEPENDENT DIGITAL PRODUCTS', 'universe.caption':'AN IDEA. AN EXPERIENCE. A PRODUCT.',
-    'hero.eyebrow':'SENIOR SOFTWARE & DATA ENGINEER / TECHNICAL LEAD',
-    'hero.description':'I design and deliver scalable microservices, cloud architectures, APIs and data-driven digital platforms — translating business needs into technical requirements and solutions with measurable value.',
-    'hero.secondary':'Explore my experience',
-    'projects.title':'My projects, in one place.',
-    'projects.description':'From everyday apps to platforms that connect business processes. Explore the products and web projects I design and build.',
-    'projects.note':'Visit each project for its overview, support and privacy information.',
-    'projects.website':'PROJECT WEBSITE', 'projects.visit':'Visit project website', 'projects.source':'GitHub repository',
-    'projects.search':'Search projects or technologies', 'projects.filter.other':'Other',
-    'projects.count':'{count} / {total} projects',
-    'projects.sync.loading':'Updating projects…', 'projects.sync.live':'Project list up to date',
-    'projects.sync.saved':'Apps and web projects',
-    'expertise.one.text':'Scalable microservices, cloud architectures and API integrations. Python, Go and Azure for enterprise automation, performance and reliability.',
-    'expertise.two.text':'Data architectures, machine connectivity and real-time streams for Industry 4.0. Integrating production systems, business applications and SAP.',
-    'expertise.three.text':'Business analysis, product ownership, requirements and acceptance criteria. End-to-end work from architectural decisions and backlog refinement to Agile delivery and go-live.',
-    'expertise.one.tags':'Python / Go / .NET / Azure / APIs',
-    'expertise.two.tags':'Kafka / RabbitMQ / MQTT / SQL / SAP',
-    'expertise.three.tags':'Product Ownership / Agile / Docker / CI/CD',
-    'about.text1':'I’m Ali Orkun Özkul, a Senior Software Engineer at Robert Bosch GmbH in Stuttgart. My professional experience spans telecom software, biomedical control systems, industrial data platforms and cloud solutions.',
-    'about.text2':'I combine technical leadership with hands-on software engineering. Understanding business needs, managing technical dependencies and working with teams to deliver reliable, scalable solutions are central to my approach.',
-    'about.years':'CAREER START', 'about.work':'Software, data\n& technical leadership',
-    'contact.kicker':'GET IN TOUCH', 'contact.title':'Let’s build\na solution.',
-    'contact.description':'Get in touch by email to talk about software, data platforms and technical leadership.',
-    'meta.title':'Ali Orkun Özkul — Senior Software & Data Engineer / Technical Lead',
-    'meta.description':'Ali Orkun Özkul. Stuttgart-based Senior Software & Data Engineer / Technical Lead. Microservices, cloud architectures, Industry 4.0 and digital products.',
-    'career.current':'Current role', 'career.contract':'Project-based contract', 'career.tags':'Technologies and focus areas', 'career.kicker':'04 / EXPERIENCE', 'career.title':'From systems to business value.',
-    'career.intro':'From telecom and biomedical control systems to Industry 4.0 and enterprise cloud solutions: software engineering, data architecture and technical leadership.',
-    'impact.kicker':'05 / IMPACT', 'impact.title':'Measurable contribution.',
-    "impact.intro":"From production processes to data infrastructure: the tangible results of systems I built across cost, traceability and operational reliability.",
-    "impact.contribution":"My contribution",
-    "impact.outcome":"Business outcome",
-    "impact.technologies":"Technologies",
-    "impact.more.kicker":"OPERATIONAL IMPACT",
-    "impact.more.title":"Visible processes. Reliable systems.",
-    "impact.delivery.kicker":"TECHNICAL LEADERSHIP",
-    "impact.delivery.title":"From requirements to go-live.",
-    "impact.delivery.intro":"A bridge between business stakeholders and engineering teams, clarifying requirements, managing technical dependencies and supporting delivery.",
-    "impact.note":"Figures are approximate. Tool Tracking savings are annual; no period is specified for the other two projects.",
-    'credentials.kicker':'06 / KNOWLEDGE', 'credentials.title':'Technology, education and growth.',
-    'credentials.skills':'Technical skills', 'credentials.certificates':'Certifications', 'credentials.education':'Education', 'credentials.languages':'Languages',
-    'education.degree':'Electrical-Electronical Engineering', 'education.school':'Uludag University · January 2009',
-    'languages.text':'Turkish — Native · English — Fluent · German — Beginner'
-  };
-  Object.assign(d.translations.tr,tr); Object.assign(d.translations.en,en);
+];
   d.career = [
   {
     "role": "Senior Software Engineer",
@@ -217,70 +284,71 @@
     },
     "current": true,
     "focus": {
-      "tr": "BULUT & KURUMSAL YAZILIM",
-      "en": "CLOUD & ENTERPRISE SOFTWARE"
+      "tr": "ÜRETİM VERİSİ PLATFORMLARI",
+      "en": "PRODUCTION-DATA PLATFORMS"
     },
     "text": {
-      "tr": "Kurumsal bulut çözümlerinde yazılım geliştirme, teknik danışmanlık ve iş ihtiyaçlarından canlıya geçişe uzanan teslimat desteği.",
-      "en": "Software engineering and technical consulting for enterprise cloud solutions, supporting delivery from business needs through go-live."
+      "tr": "Bosch genelinde kullanım için tasarlanan platformlarda veri toplama, yedekleme ve işleme mimarisi; Python/Go servisleri ve üretim sistemleri entegrasyonları.",
+      "en": "Architecture for data collection, backup and processing on platforms intended for global use across Bosch, with Python/Go services and production-system integrations."
     },
     "details": [
       {
         "label": {
-          "tr": "Bulut çözümleri",
-          "en": "Cloud solutions"
+          "tr": "Platform mimarisi",
+          "en": "Platform architecture"
         },
         "text": {
-          "tr": "Python, Go ve Azure ile yazılım ve otomasyon çözümleri geliştirme; ölçeklenebilir kurumsal bulut mimarilerini tasarlama ve destekleme.",
-          "en": "Develop software and automation with Python, Go and Azure; design and support scalable enterprise cloud architectures."
+          "tr": "Üretim verisinin toplanması, yedeklenmesi ve işlenmesini kapsayan yazılım mimarileri tasarlama.",
+          "en": "Design software architecture covering the collection, backup and processing of production data."
         }
       },
       {
         "label": {
-          "tr": "İş ile teknoloji arasında",
-          "en": "Business–engineering collaboration"
+          "tr": "Backend & entegrasyon",
+          "en": "Backend & integration"
         },
         "text": {
-          "tr": "Paydaş ihtiyaçlarını teknik gereksinimlere ve uygulama görevlerine dönüştürme; backlog netleştirme, yapılabilirlik analizi ve önceliklendirmeye destek.",
-          "en": "Translate stakeholder needs into technical requirements and implementation tasks; support backlog refinement, feasibility analysis and prioritisation."
+          "tr": "Üretim veri akışlarını ve sistemlerini bağlayan Python ve Go backend servisleri ile API entegrasyonları geliştirme.",
+          "en": "Develop backend services in Python and Go and API integrations connecting production-data workflows and systems."
         }
       },
       {
         "label": {
-          "tr": "Entegrasyon & mimari",
-          "en": "Integration & architecture"
+          "tr": "Yapay zekâ için veri hazırlığı",
+          "en": "Data preparation for AI"
         },
         "text": {
-          "tr": "Çapraz fonksiyonlu ekiplerle, iş hedeflerine uygun API entegrasyonları, veri akışları ve mimari kararlar üzerinde çalışma.",
-          "en": "Work with cross-functional teams on scalable API integrations, data flows and architecture decisions aligned with business objectives."
+          "tr": "Databricks ve Azure Functions kullanarak üretim verisini işleme ve yapay zekâ girişimlerinde kullanılabilir girdilere dönüştürme.",
+          "en": "Use Databricks and Azure Functions to process and structure production data into usable inputs for AI initiatives."
         }
       },
       {
         "label": {
-          "tr": "Uçtan uca teslimat",
-          "en": "End-to-end delivery"
+          "tr": "Gereksinimler & önceliklendirme",
+          "en": "Requirements & prioritisation"
         },
         "text": {
-          "tr": "Gereksinim analizinden uygulama uyumuna, test desteğinden canlıya geçiş koordinasyonu ve sürüm sonrası iyileştirmelere kadar katkı.",
-          "en": "Support requirements analysis, implementation alignment, testing, go-live coordination and post-release improvements."
+          "tr": "Paydaş gereksinimlerini teknik görevlere dönüştürme, entegrasyon ihtiyaçlarını tanımlama; backlog netleştirme ve önceliklendirmeye katkı.",
+          "en": "Translate stakeholder requirements into technical tasks, define integration needs and contribute to backlog refinement and prioritisation."
         }
       },
       {
         "label": {
-          "tr": "Operasyonel iyileştirme",
-          "en": "Operational improvement"
+          "tr": "Otomasyon & teslimat",
+          "en": "Automation & delivery"
         },
         "text": {
-          "tr": "Bulut ortamlarında performans, güvenlik ve güvenilirliği iyileştirme; süreçlerde otomasyon ve operasyonel verimlilik fırsatlarını belirleme.",
-          "en": "Improve cloud performance, security and reliability; identify opportunities for automation and operational efficiency."
+          "tr": "Manuel yükü azaltıp işleme hızı ve güvenilirliğini artıran veri akışları otomasyonu; test, canlıya geçiş ve sürüm sonrası iyileştirmelere destek.",
+          "en": "Automate data workflows to reduce manual effort and improve processing speed and reliability; support testing, go-live and post-release improvements."
         }
       }
     ],
     "tags": [
       "Python",
       "Go",
-      "Azure",
-      "API integration"
+      "Databricks",
+      "Azure Functions",
+      "REST APIs"
     ]
   },
   {
@@ -296,56 +364,57 @@
       "en": "TECHNICAL LEADERSHIP & INDUSTRY 4.0"
     },
     "text": {
-      "tr": "Endüstriyel yazılım ekosistemlerinde mimari yön, entegrasyon stratejisi ve geliştirme yaşam döngüsü boyunca teknik liderlik.",
-      "en": "Technical leadership across architecture, integration strategy and the software lifecycle for industrial software ecosystems."
+      "tr": "Endüstri 4.0 mikroservisleri geliştiren beş kişilik yazılım ekibine teknik liderlik; mimari ve teknoloji seçiminden uygulama ve devreye almaya kadar teknik sahiplik.",
+      "en": "Technical leadership of a five-person team delivering Industry 4.0 microservices, owning architecture and technology selection through implementation and rollout."
     },
     "details": [
       {
         "label": {
-          "tr": "Mimari liderlik",
-          "en": "Architecture leadership"
+          "tr": "Mimari & teknoloji seçimi",
+          "en": "Architecture & technology selection"
         },
         "text": {
-          "tr": "Endüstri 4.0 gereksinimleri ve küresel kod kalitesi standartlarıyla uyumlu mikroservis mimarilerinin tasarımına liderlik.",
-          "en": "Lead microservice architecture design aligned with Industry 4.0 requirements and global coding quality standards."
+          "tr": "Mimari kararları ve teknoloji seçimini sahiplenerek tasarım, uygulama ve teknik devreye alma sürecini yönetme.",
+          "en": "Own architecture and technology selection across design, implementation and technical rollout."
         }
       },
       {
         "label": {
-          "tr": "Veri akışı stratejisi",
-          "en": "Data-flow strategy"
+          "tr": "İş paketleri & öncelikler",
+          "en": "Work breakdown & priorities"
         },
         "text": {
-          "tr": "Yapay zekâ odaklı sistemler ve yazılım ekosistemi entegrasyonlarını destekleyen veri akışı stratejileri tanımlama.",
-          "en": "Define data-flow strategies supporting AI-driven systems and software ecosystem integrations."
+          "tr": "Veri akışları, gereksinimler ve kabul kriterlerini tanımlama; teslimat kapsamını teknik iş paketlerine ayırıp uygulama görevlerini önceliklendirme.",
+          "en": "Define data flows, requirements and acceptance criteria; break delivery scope into technical work packages and prioritise implementation tasks."
         }
       },
       {
         "label": {
-          "tr": "Yaşam döngüsü & standartlar",
-          "en": "Lifecycle & standards"
+          "tr": "Kod inceleme & mentorluk",
+          "en": "Code reviews & mentoring"
         },
         "text": {
-          "tr": "Mimari tasarım, uygulama stratejisi ve operasyonel destekte teknik yönlendirme; kurumsal kalite, güvenlik ve ölçeklenebilirlik standartlarını gözetme.",
-          "en": "Provide technical direction across architecture, implementation strategy and operational support, aligned with enterprise quality, security and scalability standards."
+          "tr": "Geliştiricilere tasarım ve uygulama sırasında uygulamalı teknik rehberlik sunma; kod incelemeleri ve mentorluk.",
+          "en": "Review code and mentor developers, providing hands-on technical guidance during design and implementation."
         }
       },
       {
         "label": {
-          "tr": "Gereksinimler & bağımlılıklar",
-          "en": "Requirements & dependencies"
+          "tr": "Koordinasyon & canlıya geçiş",
+          "en": "Coordination & go-live"
         },
         "text": {
-          "tr": "İş kullanıcılarıyla ihtiyaçları netleştirme; kabul kriterlerini ve sistemler arası bağımlılıkları yönetme. Agile ekipler için kapsamı, riskleri ve teknik kısıtları açıklığa kavuşturma.",
-          "en": "Clarify business-user needs, define acceptance criteria and manage cross-system dependencies. Support Agile teams by clarifying scope, risks and technical constraints."
+          "tr": "Ekipler arası bağımlılıkları koordine etme, riskleri ve teknik kısıtları netleştirme; canlıya geçiş ve operasyonel desteğe kadar teknik teslimatı sahiplenme.",
+          "en": "Coordinate cross-team dependencies, clarify risks and technical constraints, and own technical delivery through go-live and operational support."
         }
       }
     ],
     "tags": [
       "Microservices",
       "Industry 4.0",
-      "APIs",
-      "Agile"
+      "Architecture",
+      "Code review",
+      "Mentoring"
     ]
   },
   {
@@ -361,38 +430,28 @@
       "en": "DATA ARCHITECTURE & SOFTWARE ENGINEERING"
     },
     "text": {
-      "tr": "Endüstri 4.0 için mikroservisler, veri yoğun sistemler ve bulut tabanlı uygulamaların tasarımı ve geliştirilmesi.",
-      "en": "Design and development of microservices, data-intensive systems and cloud-native applications for Industry 4.0."
+      "tr": "Endüstri 4.0 mikroservislerinin geliştirilmesi ve veri yoğun endüstriyel sistemlerin yazılım mimarisi sahipliği.",
+      "en": "Industry 4.0 microservice development and software architecture ownership for data-intensive industrial systems."
     },
     "details": [
       {
         "label": {
-          "tr": "Ölçeklenebilir yazılım",
-          "en": "Scalable software"
+          "tr": "Mikroservisler & mimari",
+          "en": "Microservices & architecture"
         },
         "text": {
-          "tr": "Tüm geliştirme yaşam döngüsünde kaliteyi gözeterek endüstriyel uygulamalar ve mikroservisler tasarlama ve geliştirme.",
-          "en": "Design and develop industrial applications and microservices with quality standards across the full software lifecycle."
+          "tr": "Endüstri 4.0 mikroservisleri geliştirme ve veri yoğun sistemlerin yazılım mimarisini sahiplenme.",
+          "en": "Develop Industry 4.0 microservices and own the software architecture of data-intensive industrial systems."
         }
       },
       {
         "label": {
-          "tr": "Veri mimarisi sahipliği",
-          "en": "Data architecture ownership"
+          "tr": "Bulut & teslimat",
+          "en": "Cloud & delivery"
         },
         "text": {
-          "tr": "Yapay zekâ odaklı ve veri yoğun sistemleri destekleyen veri mimarilerini tasarlama ve sahiplenme.",
-          "en": "Design and own data architectures supporting AI-driven and data-intensive systems."
-        }
-      },
-      {
-        "label": {
-          "tr": "Bulut & ekipler arası teslimat",
-          "en": "Cloud & cross-functional delivery"
-        },
-        "text": {
-          "tr": "Docker ve CI/CD ile konteyner tabanlı çözümleri uygulama ve optimize etme; karmaşık projelerin teslimatında farklı ekip ve paydaşlarla iş birliği.",
-          "en": "Implement and optimise container-based solutions with Docker and CI/CD; collaborate with teams and stakeholders to deliver complex projects."
+          "tr": "Docker ve CI/CD ile bulut tabanlı ve konteyner kullanan çözümleri hayata geçirme; yazılım yaşam döngüsü boyunca farklı ekiplerle çalışma.",
+          "en": "Implement cloud-native and container-based solutions with Docker and CI/CD, working with cross-functional teams throughout the software lifecycle."
         }
       }
     ],
@@ -426,8 +485,8 @@
           "en": "Call processing"
         },
         "text": {
-          "tr": "ISUP ve PRI ile çağrı kontrolü, takibi ve yönlendirme yazılımlarını geliştirme ve bakımını yapma; H-323 protokol entegrasyonlarını iyileştirme.",
-          "en": "Develop and maintain call-control, tracking and routing software using ISUP and PRI; improve H-323 protocol integrations."
+          "tr": "ISUP, PRI ve H.323 kullanarak çağrı kontrolü ve yönlendirme yazılımı geliştirme.",
+          "en": "Develop call-control and routing software using ISUP, PRI and H.323."
         }
       },
       {
@@ -446,15 +505,15 @@
           "en": "Customer scenarios"
         },
         "text": {
-          "tr": "Müşterilerle senaryoları simüle etme, sorunları analiz edip giderme ve yeni özellikler teslim etme.",
-          "en": "Collaborate with customers to simulate scenarios, troubleshoot issues and deliver new features."
+          "tr": "Sorun giderme ve yeni sesli iletişim özellikleri için müşterilerle birlikte çalışma.",
+          "en": "Work with customers on troubleshooting and new voice communication features."
         }
       }
     ],
     "tags": [
       "ISUP",
       "PRI",
-      "H-323",
+      "H.323",
       "112"
     ]
   },
@@ -472,8 +531,8 @@
       "en": "BIOMEDICAL CONTROL SYSTEMS"
     },
     "text": {
-      "tr": "N-SMART biyomedikal kontrol birimi için yazılım, donanım ve haberleşme tasarımı.",
-      "en": "Software, hardware and communication design for the N-SMART biomedical controller."
+      "tr": "N-SMART biyomedikal kontrolörünün iletişim tasarımı, kontrol işlevleri ve uyarı sistemleri.",
+      "en": "Communication design, control functions and alerts for the N-SMART biomedical controller."
     },
     "details": [
       {
@@ -482,8 +541,8 @@
           "en": "Device communication"
         },
         "text": {
-          "tr": "RS-232/485, Ethernet, USB Host/Device ve TCP/IP üzerinden arayüz haberleşmeleri için yazılım ve donanım tasarımı.",
-          "en": "Design software and hardware for interface communications over RS-232/485, Ethernet, USB Host/Device and TCP/IP."
+          "tr": "RS-232/485, Ethernet, USB, TCP/IP ve MODBUS üzerinden N-SMART kontrolör iletişimini tasarlama.",
+          "en": "Design N-SMART controller communications using RS-232/485, Ethernet, USB, TCP/IP and MODBUS."
         }
       },
       {
@@ -492,8 +551,8 @@
           "en": "Control & calibration"
         },
         "text": {
-          "tr": "MODBUS haberleşme yazılımı, alarm yapılandırmaları, sıcaklık kalibrasyonu ve PID kontrolü.",
-          "en": "Develop MODBUS communication software, alarm configurations, temperature calibration and PID controls."
+          "tr": "Alarm işlevleri, sıcaklık kalibrasyonu ve PID kontrolü geliştirme.",
+          "en": "Implement alarms, temperature calibration and PID control."
         }
       },
       {
@@ -502,8 +561,8 @@
           "en": "Records & alerts"
         },
         "text": {
-          "tr": "Sıcaklık verilerinin USB’ye kaydı; HMI üzerinden GSM modem ile SMS ve e-posta uyarıları.",
-          "en": "Record temperature data to USB and implement SMS and email escalations through a GSM modem from the HMI."
+          "tr": "Sıcaklık verisi kaydı ve GSM tabanlı SMS/e-posta uyarıları geliştirme.",
+          "en": "Implement temperature logging and GSM-based SMS/email alerts."
         }
       }
     ],
@@ -581,17 +640,14 @@
       "tr": "TAKIM TAKİBİ",
       "en": "TOOL TRACKING"
     },
-    "title": {
-      "tr": "Gerçek zamanlı takım takibi",
-      "en": "Real-time tool tracking"
-    },
+    "title": "Tool Tracking System",
     "contribution": {
-      "tr": "Maliyet hesaplamasını gerçek zamanlı takım takibiyle birleştiren Tool Tracking System’i geliştirdim.",
-      "en": "Developed a Tool Tracking System combining real-time tool tracking with cost calculation."
+      "tr": "Gerçek zamanlı takım takibi ve maliyet hesaplama sistemini bağımsız olarak tasarladım ve teknik devreye alınmasına liderlik ettim.",
+      "en": "Independently designed the real-time tracking and cost-calculation system and led its technical rollout."
     },
     "outcome": {
-      "tr": "Takip ve maliyet hesaplama çözümüyle yaklaşık €750 bin yıllık maliyet tasarrufu sağlandı.",
-      "en": "The tracking and cost-calculation solution delivered approximately €750K in annual cost savings."
+      "tr": "Kesici ve delici takımların ömrünü uzattı, takım kırılma nedenlerinin analizini iyileştirdi ve daha kararlı operasyonları destekledi. Yaklaşık €750 bin yıllık tasarruf.",
+      "en": "Extended cutting and drilling tool life, improved analysis of tool-breakage causes and supported more stable operations. Approximately €750K in annual savings."
     },
     "tech": [
       "Vue.js",
@@ -604,59 +660,26 @@
   {
     "value": "~€350K",
     "metric": {
-      "tr": "Makine bağlantılarında tasarruf",
-      "en": "Machine connectivity savings"
+      "tr": "Yıllık maliyet tasarrufu",
+      "en": "Annual cost savings"
     },
     "category": {
       "tr": "ENDÜSTRİYEL ENTEGRASYON",
       "en": "INDUSTRIAL INTEGRATION"
     },
-    "title": {
-      "tr": "Makineden veri akışına",
-      "en": "From machines to data streams"
-    },
+    "title": "Machine Connectivity",
     "contribution": {
-      "tr": "Go, Kafka ve OPC entegrasyonuyla makine bağlantılarını sağlayan mikroservisler geliştirdim.",
-      "en": "Built machine connectivity microservices using Go, Kafka and OPC integration."
+      "tr": "Yeniden kullanılabilir makine bağlantı altyapısını bağımsız olarak tasarladım ve teknik devreye alınmasına liderlik ettim.",
+      "en": "Independently designed a reusable machine-connectivity foundation and led its technical rollout."
     },
     "outcome": {
-      "tr": "Gerçek zamanlı endüstriyel veri akışı mümkün hale geldi; yaklaşık €350 bin tasarruf sağlandı.",
-      "en": "Enabled real-time industrial data streaming and delivered approximately €350K in savings."
+      "tr": "Makineler arası iletişim ve gerçek zamanlı veri akışı sağladı; iş gücü ihtiyacını azalttı, arızaların önlenmesine yardımcı oldu ve yeni endüstriyel projelere zemin hazırladı. Yaklaşık €350 bin yıllık tasarruf.",
+      "en": "Enabled machine-to-machine communication and real-time industrial data streaming, reduced labour requirements and helped prevent faults while opening the way for new industrial projects. Approximately €350K in annual savings."
     },
     "tech": [
       "Go",
       "Kafka",
       "OPC"
-    ]
-  },
-  {
-    "value": "~€200K",
-    "metric": {
-      "tr": "Veri altyapısında tasarruf",
-      "en": "Data infrastructure savings"
-    },
-    "category": {
-      "tr": "VERİ MÜHENDİSLİĞİ",
-      "en": "DATA ENGINEERING"
-    },
-    "title": {
-      "tr": "Ölçeklenebilir veri altyapısı",
-      "en": "Scalable data infrastructure"
-    },
-    "contribution": {
-      "tr": "Kafka, MQTT ve Redis temelli; CI/CD ve izleme bileşenleri içeren ölçeklenebilir veri altyapısını tasarladım ve hayata geçirdim.",
-      "en": "Designed and implemented scalable data infrastructure with Kafka, MQTT, Redis, CI/CD and monitoring."
-    },
-    "outcome": {
-      "tr": "Sistem verimliliği ve güvenilirliğindeki iyileştirmelerle yaklaşık €200 bin tasarruf sağlandı.",
-      "en": "Improved system efficiency and reliability, delivering approximately €200K in savings."
-    },
-    "tech": [
-      "Kafka",
-      "MQTT",
-      "Redis",
-      "CI/CD",
-      "Monitoring"
     ]
   }
 ];
@@ -666,23 +689,26 @@
       "tr": "ÜRETİM İZLENEBİLİRLİĞİ",
       "en": "PRODUCTION TRACEABILITY"
     },
-    "title": "TETRIS",
+    "title": {
+      "tr": "TETRIS · Üretim takibi",
+      "en": "TETRIS · Production tracking"
+    },
     "contribution": {
-      "tr": "Üretim akışının gerçek zamanlı optimizasyonunu ve sistemler arası tam yaşam döngüsü izlenebilirliğini sağlayan uçtan uca takip sistemi geliştirdim.",
-      "en": "Developed an end-to-end tracking system enabling real-time production-flow optimisation and full lifecycle traceability across systems."
+      "tr": "Üretim akışının görünürlüğünü ve yaşam döngüsü izlenebilirliğini geliştiren uçtan uca üretim takip sistemi.",
+      "en": "End-to-end production tracking to improve production-flow visibility and lifecycle traceability."
     },
     "outcome": {
-      "tr": "Her bir parçanın üretim sürecinde operasyonel görünürlük arttı, darboğazlar azaldı ve üretim verimliliği iyileşti.",
-      "en": "Increased operational visibility, reduced bottlenecks and improved production efficiency for every individual part."
+      "tr": "Üretimdeki darboğazların belirlenmesini ve yönetilmesini destekleyen süreç görünürlüğü.",
+      "en": "Process visibility supporting bottleneck identification and management."
     },
     "tags": {
       "tr": [
-        "Uçtan uca takip",
-        "Gerçek zamanlı üretim"
+        "Üretim görünürlüğü",
+        "Yaşam döngüsü takibi"
       ],
       "en": [
-        "End-to-end tracking",
-        "Real-time production"
+        "Production visibility",
+        "Lifecycle traceability"
       ]
     }
   },
@@ -696,12 +722,12 @@
       "en": "ERP-integrated production app"
     },
     "contribution": {
-      "tr": "SAP ile entegre çalışan bir üretim uygulaması tasarladım; parti takibi ve malzeme akışını iş zekâsı destekli kararlarla birleştirdim.",
-      "en": "Designed an SAP-integrated production application connecting batch tracking and material flow with business-intelligence-driven decisions."
+      "tr": "Parti takibi ve malzeme akışı şeffaflığı için SAP ile entegre üretim uygulaması.",
+      "en": "SAP-integrated production application for batch tracking and material-flow transparency."
     },
     "outcome": {
-      "tr": "Parti takibi ve malzeme akışında şeffaflık sağlandı. Power BI ve Tableau ile veri destekli karar alma mümkün hale geldi.",
-      "en": "Enabled batch tracking, material-flow transparency and data-driven decision-making with Power BI and Tableau."
+      "tr": "Power BI ve Tableau raporlarıyla operasyonel karar almayı destekleyen görünürlük.",
+      "en": "Power BI and Tableau reporting to support operational decision-making."
     },
     "tech": [
       "SAP",
@@ -719,12 +745,12 @@
       "en": "Test automation"
     },
     "contribution": {
-      "tr": "Python ve Selenium kullanarak otomasyon ve web testi çözümlerini hayata geçirdim.",
-      "en": "Implemented automation and web testing solutions using Python and Selenium."
+      "tr": "Python ve Selenium ile web testi otomasyonu.",
+      "en": "Python and Selenium web-test automation."
     },
     "outcome": {
-      "tr": "Manuel kalite kontrol yükü azaldı, sistem kararlılığı arttı ve sürüm döngüleri hızlandı.",
-      "en": "Reduced manual QA effort, increased system stability and accelerated release cycles."
+      "tr": "Manuel kalite kontrol yükünü azaltma, yazılım kararlılığını iyileştirme ve sürümleri hızlandırma.",
+      "en": "Reduce manual QA effort, improve software stability and accelerate releases."
     },
     "tech": [
       "Python",
@@ -735,45 +761,149 @@
   d.impactDelivery = [
   {
     "title": {
-      "tr": "İhtiyacı netleştirme",
-      "en": "Clarify the need"
+      "tr": "Mimariyi sahiplenme",
+      "en": "Own the architecture"
     },
     "text": {
-      "tr": "İş ihtiyaçlarını teknik gereksinimlere, çözüm önerilerine ve kabul kriterlerine dönüştürme.",
-      "en": "Translate business needs into technical requirements, solution concepts and acceptance criteria."
+      "tr": "Mimari ve teknoloji seçimini gereksinimler, veri akışları ve entegrasyon ihtiyaçlarıyla birlikte ele alma.",
+      "en": "Own architecture and technology selection alongside requirements, data flows and integration needs."
     }
   },
   {
     "title": {
-      "tr": "Mimari & entegrasyon",
-      "en": "Architecture & integration"
+      "tr": "İşi planlama",
+      "en": "Structure the work"
     },
     "text": {
-      "tr": "API’ler, veri akışları ve üretim sistemleri arasındaki bağımlılıkları ele alarak ölçeklenebilir çözümler tasarlama.",
-      "en": "Design scalable solutions while managing dependencies across APIs, data flows and production systems."
+      "tr": "Kapsamı teknik iş paketlerine ayırma, kabul kriterlerini netleştirme ve uygulama görevlerini önceliklendirme.",
+      "en": "Break scope into technical work packages, clarify acceptance criteria and prioritise implementation tasks."
     }
   },
   {
     "title": {
-      "tr": "Teslimat & canlıya geçiş",
-      "en": "Delivery & go-live"
+      "tr": "Ekibe rehberlik etme",
+      "en": "Guide the team"
     },
     "text": {
-      "tr": "Backlog netleştirme, teknik yapılabilirlik, test desteği ve canlıya geçiş koordinasyonuna katkı.",
-      "en": "Support backlog refinement, technical feasibility analysis, testing and go-live coordination."
+      "tr": "Kod incelemeleri, mentorluk ve uygulamalı teknik rehberlikle tasarım ve geliştirmeyi destekleme.",
+      "en": "Support design and implementation through code reviews, mentoring and hands-on technical guidance."
     }
   },
   {
     "title": {
-      "tr": "Sürekli iyileştirme",
-      "en": "Continuous improvement"
+      "tr": "Canlıya taşıma",
+      "en": "Own the rollout"
     },
     "text": {
-      "tr": "Sürüm sonrasında otomasyon, performans, güvenilirlik ve operasyonel verimlilik fırsatlarını belirleme.",
-      "en": "Identify post-release opportunities to improve automation, performance, reliability and operational efficiency."
+      "tr": "Ekipler arası bağımlılıkları, riskleri ve teknik kısıtları koordine ederek canlıya geçiş ve operasyonel desteği sahiplenme.",
+      "en": "Coordinate cross-team dependencies, risks and constraints, owning technical delivery through go-live and operational support."
     }
   }
 ];
-  d.skills = ['Python','Go','.NET / .NET Core','C / C++','Node.js / JavaScript','AngularJS','Vue.js','SQL / T-SQL','Kafka','RabbitMQ','MQTT','Redis','Azure','Docker','CI/CD','Microservices / APIs','SAP','Power BI / Tableau','Selenium','Product ownership','Business analysis','Agile / Scrum','User stories / Acceptance criteria','KPI definition / Continuous improvement'];
-  d.certificates = ['Introduction to Data Science in Python — University of Michigan','Open Source Project Management — Linux Foundation','SQL for Data Science — University of California','Oracle Database: SQL & PL/SQL Fundamentals — Bilginc IT Academy','Advanced Communication Skills — Netas','Software and Database Specialist — Bilge Adam'];
+  d.skillGroups = [
+  {
+    "title": {
+      "tr": "Mimari & teslimat",
+      "en": "Architecture & delivery"
+    },
+    "items": [
+      "Microservices",
+      "REST APIs",
+      "Software / data architecture",
+      "Requirements analysis",
+      "Product ownership",
+      "Agile / Scrum"
+    ]
+  },
+  {
+    "title": {
+      "tr": "Teknik liderlik",
+      "en": "Technical leadership"
+    },
+    "items": {
+      "tr": [
+        "Mimari & teknoloji seçimi",
+        "Kod incelemeleri",
+        "Mentorluk",
+        "İş paketlerine ayırma",
+        "Önceliklendirme",
+        "Ekipler arası koordinasyon",
+        "Canlıya geçiş sahipliği"
+      ],
+      "en": [
+        "Architecture & technology selection",
+        "Code reviews",
+        "Mentoring",
+        "Work breakdown",
+        "Prioritisation",
+        "Cross-team coordination",
+        "Go-live ownership"
+      ]
+    }
+  },
+  {
+    "title": {
+      "tr": "Diller & framework’ler",
+      "en": "Languages & frameworks"
+    },
+    "items": [
+      "Go",
+      "Python",
+      "C / C++",
+      "JavaScript",
+      "Node.js",
+      ".NET / .NET Core",
+      "Vue.js",
+      "AngularJS"
+    ]
+  },
+  {
+    "title": {
+      "tr": "Bulut & DevOps",
+      "en": "Cloud & DevOps"
+    },
+    "items": [
+      "Azure",
+      "Azure Functions",
+      "Databricks",
+      "Docker",
+      "CI/CD",
+      "Monitoring"
+    ]
+  },
+  {
+    "title": {
+      "tr": "Mesajlaşma & veri",
+      "en": "Messaging & data"
+    },
+    "items": [
+      "Kafka",
+      "RabbitMQ",
+      "MQTT",
+      "Redis",
+      "SQL",
+      "T-SQL",
+      "Oracle SQL / PLSQL"
+    ]
+  },
+  {
+    "title": {
+      "tr": "Entegrasyon & test",
+      "en": "Integration & testing"
+    },
+    "items": [
+      "SAP",
+      "OPC",
+      "TCP/IP",
+      "MODBUS",
+      "Selenium"
+    ]
+  }
+];
+  d.certificates = [
+  "Introduction to Data Science in Python — University of Michigan",
+  "Open Source Project Management — Linux Foundation",
+  "SQL for Data Science — University of California",
+  "Oracle Database: SQL & PL/SQL Fundamentals — Bilginc IT Academy"
+];
 })();

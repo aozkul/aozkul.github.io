@@ -88,3 +88,20 @@ html{scroll-padding-top:calc(var(--header-height) + 24px)}
 @media(max-width:750px){.career-list{margin-top:32px}.career-list:before,.career-item:before{display:none}.career-item{grid-template-columns:minmax(0,1fr);gap:15px;padding-bottom:35px}.career-meta{padding-top:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}.career-date{margin:0}.career-location{margin:0}.career-status,.career-contract{margin-left:auto}.career-body{padding:25px}.career-focus{font-size:12px}.career-text{margin-top:18px}.career-details{margin-top:23px;padding-top:23px}.career-tags{margin-top:23px;padding-top:20px}}
 @media(max-width:390px){.career-body{padding:22px}.career-status,.career-contract{margin-left:0}.career-meta{gap:8px 12px}.career-focus{letter-spacing:0}}
 @media print{.career-list:before,.career-item:before{display:none}.career-item{grid-template-columns:150px 1fr;gap:20px;break-inside:avoid}.career-body,.is-current .career-body{background:none}.career-body{padding:20px}.career-details{grid-template-columns:1fr}}
+/* Updated CV: two selected annual impacts and structured technical skills. */
+.professional-project-link{display:inline-flex;align-items:center;gap:12px;margin:8px 0 0;color:var(--accent);font-size:14px}
+.impact-context{font:12px/1.8 ui-monospace,monospace;color:var(--muted);letter-spacing:.05em;margin:34px 0 0}
+.impact-list{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:18px}
+.impact-card-metric .impact-story dd{font-size:15px}
+.skill-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.skill-group{min-width:0;padding:21px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+.skill-group h4{font-size:15px;font-weight:560;line-height:1.5;letter-spacing:-.015em;margin:0 0 16px}
+.skill-group ul{list-style:none;display:flex;flex-wrap:wrap;gap:7px;margin:0;padding:0}
+.skill-group .skill-chip{max-width:100%;font-size:12px;line-height:1.6;padding:5px 8px;background:color-mix(in srgb,var(--accent) 4%,transparent)}
+.credentials-grid{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:48px}
+.credentials-learning .education-block{border-top:1px solid var(--line);padding-top:14px}
+.credentials-learning .education-block p,.certificates-list li{font-size:14px}
+.optional-links{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+@media(max-width:1000px){.credentials-grid{gap:30px}.skill-groups{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:750px){.impact-list{grid-template-columns:minmax(0,1fr)}.credentials-grid{grid-template-columns:minmax(0,1fr);gap:30px}.skill-groups{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.skill-groups{grid-template-columns:minmax(0,1fr)}.professional-project-link{font-size:13px}.optional-links .button{width:100%;justify-content:center}}

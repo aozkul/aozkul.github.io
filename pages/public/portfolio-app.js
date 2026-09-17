@@ -89,7 +89,12 @@
     document.getElementById('impact-delivery').replaceChildren(...(d.impactDelivery || []).map(p=>{
       const item=el('li');item.append(el('h4','',local(p.title)),el('p','',local(p.text)));return item;
     }));
-    document.getElementById('skills-list').replaceChildren(...(d.skills || []).map(skill=>el('span','skill-chip',skill)));
+    document.getElementById('skills-list').replaceChildren(...(d.skillGroups || []).map((group,index)=>{
+      const article=el('article','skill-group'),heading=el('h4','',local(group.title)),list=el('ul');
+      heading.id='skill-group-'+(index+1);article.setAttribute('aria-labelledby',heading.id);
+      for(const skill of Array.isArray(group.items)?group.items:local(group.items))list.append(el('li','skill-chip',skill));
+      article.append(heading,list);return article;
+    }));
     document.getElementById('certificates-list').replaceChildren(...(d.certificates || []).map(c=>el('li','',c)));
   }
   const header=document.querySelector('.site-header'),navigation=document.getElementById('main-nav'),menuButton=document.getElementById('menu-toggle'),backdrop=document.getElementById('nav-backdrop');
@@ -140,6 +145,7 @@
     const search=document.getElementById('project-search');search.placeholder=t('projects.search');search.setAttribute('aria-label',t('projects.search'));
     const contact=document.getElementById('optional-links');contact.replaceChildren();
     if(/^[^\s@?&#]+@[^\s@?&#]+\.[^\s@?&#]+$/.test(d.profile.email || '')){const a=el('a','button lime',t('contact.email'));a.href='mailto:'+d.profile.email;contact.append(a);}
+    const linkedin=url(d.profile.linkedin);if(linkedin)contact.append(link(linkedin,'button secondary',t('contact.linkedin')));
     contact.hidden=!contact.children.length;menu(false);theme();gallery();career();
   }
   // Only inspect trees belonging to repositories returned by the PUBLIC listing.
