@@ -2,7 +2,7 @@ name: Publish project website
 on:
   push:
     branches: [main]
-    paths: ['pages/**', 'index.html', '404.html', 'site-premium.css', 'site-data.js', 'portfolio-content.js', 'portfolio-app.js', 'favicon.svg', 'assets/icons/**', '.github/workflows/pages.yml']
+    paths: ['pages/**', 'index.html', '404.html', 'site-premium.css', 'site-data.js', 'portfolio-content.js', 'portfolio-app.js', 'industrial-*.mjs', 'industrial-demo.css', 'favicon.svg', 'assets/icons/**', '.github/workflows/pages.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: '24'
           package-manager-cache: false
-      - run: node pages/build.mjs && node pages/check.mjs
+      - run: node --test pages/industrial-model.test.mjs && node pages/build.mjs && node pages/check.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

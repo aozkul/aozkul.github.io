@@ -2,7 +2,7 @@ import fs from 'node:fs';import path from 'node:path';import {fileURLToPath} fro
 import {execFileSync} from 'node:child_process';
 const dir=path.dirname(fileURLToPath(import.meta.url)),repo=path.dirname(dir),out=path.join(dir,'public');
 fs.mkdirSync(out,{recursive:true});
-for(const file of ['index.html','404.html','site-premium.css','site-data.js','portfolio-content.js','portfolio-app.js','favicon.svg'])fs.copyFileSync(path.join(repo,file),path.join(out,file));
+for(const file of ['index.html','404.html','site-premium.css','site-data.js','portfolio-content.js','portfolio-app.js','industrial-demo.css','industrial-demo.mjs','industrial-model.mjs','favicon.svg'])fs.copyFileSync(path.join(repo,file),path.join(out,file));
 fs.cpSync(path.join(repo,'assets/icons'),path.join(out,'assets/icons'),{recursive:true});
 // The Kernora showcase is public; the separate CRM repository remains private.
 execFileSync(process.execPath,[path.join(dir,'kernora/build.mjs')],{stdio:'inherit'});

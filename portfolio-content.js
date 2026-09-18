@@ -10,7 +10,7 @@
   "resumeUrl": null
 });
   Object.assign(d.translations.tr, {
-  "nav.home": "Başlangıç",
+  "nav.home": "Demo",
   "nav.career": "Deneyim",
   "nav.impact": "Sonuçlar",
   "nav.credentials": "Yetkinlikler",
@@ -84,7 +84,7 @@
   "contact.linkedin": "LinkedIn’de iletişime geç"
 });
   Object.assign(d.translations.en, {
-  "nav.home": "Home",
+  "nav.home": "Demo",
   "nav.career": "Experience",
   "nav.impact": "Impact",
   "nav.credentials": "Skills",
