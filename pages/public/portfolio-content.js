@@ -29,7 +29,7 @@
   "projects.website": "PROJE WEB SAYFASI",
   "projects.visit": "Proje sayfasını aç",
   "projects.source": "GitHub deposu",
-  "projects.search": "Proje veya teknoloji ara",
+  "projects.search": "Proje veya kategori ara",
   "projects.filter.other": "Diğer",
   "projects.count": "{count} / {total} proje",
   "projects.sync.loading": "Proje listesi güncelleniyor…",
@@ -103,7 +103,7 @@
   "projects.website": "PROJECT WEBSITE",
   "projects.visit": "Visit project website",
   "projects.source": "GitHub repository",
-  "projects.search": "Search projects or technologies",
+  "projects.search": "Search projects or categories",
   "projects.filter.other": "Other",
   "projects.count": "{count} / {total} projects",
   "projects.sync.loading": "Updating projects…",
@@ -159,6 +159,22 @@
 });
   d.projects = [
   {
+    "name": "Kernora",
+    "mark": "K",
+    "language": "TypeScript",
+    "tone": "blue",
+    "icon": "assets/icons/kernora-original.png",
+    "page": "https://aozkul.github.io/kernora/",
+    "pageEn": "https://aozkul.github.io/kernora/en/",
+    "catalogOnly": true,
+    "description": {
+      "tr": "Kayıtlar, süreçler, belgeler ve ekip görevleri. Danışmanlık ve operasyon için ortak CRM çalışma alanı.",
+      "en": "Records, processes, documents and team tasks. A shared CRM workspace for consultancy and operations."
+    },
+    "visibility": "public",
+    "category": "CRM"
+  },
+  {
     "name": "UFFF",
     "mark": "U!",
     "language": "HTML",
@@ -170,7 +186,8 @@
       "tr": "Sesini çizgi film karakterine dönüştür. Kendi sahneni yarat, hareketlendir ve paylaş.",
       "en": "Turn your voice into a cartoon character. Create, animate and share your own scene."
     },
-    "visibility": "public"
+    "visibility": "public",
+    "category": "iOS App"
   },
   {
     "name": "PaceQ",
@@ -184,7 +201,8 @@
       "tr": "Odak seansları, esnek molalar ve sakin bir çalışma ritmi.",
       "en": "Focused sessions, flexible breaks and a calmer working rhythm."
     },
-    "visibility": "public"
+    "visibility": "public",
+    "category": "iOS App"
   },
   {
     "name": "NotNow",
@@ -198,7 +216,8 @@
       "tr": "İstek anında kendine kısa bir mola ver. Küçük adımlarla, kendi hızında.",
       "en": "Take a short pause when a craving arrives. Small steps, at your own pace."
     },
-    "visibility": "public"
+    "visibility": "public",
+    "category": "iOS App"
   },
   {
     "name": "PayGuard",
@@ -212,7 +231,8 @@
       "tr": "Abonelikler, garantiler ve iade tarihleri. Önemli günler tek bir yerde.",
       "en": "Subscriptions, warranties and return dates. Keep the important dates together."
     },
-    "visibility": "public"
+    "visibility": "public",
+    "category": "iOS App"
   },
   {
     "name": "VocabLens",
@@ -226,7 +246,8 @@
       "tr": "Gördüğün kelimeleri keşfet. Çeviri ve kişisel kelime kartlarıyla öğren.",
       "en": "Discover the words around you. Learn with translations and personal word cards."
     },
-    "visibility": "public"
+    "visibility": "public",
+    "category": "iOS App"
   },
   {
     "name": "MathRush",
@@ -240,7 +261,8 @@
       "tr": "Matematiğe küçük bir mola. Uygulama bilgileri, destek ve gizlilik.",
       "en": "A little time for maths. App information, support and privacy."
     },
-    "visibility": "public"
+    "visibility": "public",
+    "category": "iOS App"
   },
   {
     "name": "NuThings_v1",
@@ -255,22 +277,8 @@
       "en": "A modern catalogue and shopping experience project for natural products."
     },
     "logo": true,
-    "visibility": "public"
-  },
-  {
-    "name": "Kernora",
-    "mark": "K",
-    "language": "TypeScript",
-    "tone": "blue",
-    "icon": "assets/icons/kernora-original.png",
-    "page": "https://aozkul.github.io/kernora/",
-    "pageEn": "https://aozkul.github.io/kernora/en/",
-    "catalogOnly": true,
-    "description": {
-      "tr": "Kayıtlar, süreçler, belgeler ve ekip görevleri. Danışmanlık ve operasyon için ortak CRM çalışma alanı.",
-      "en": "Records, processes, documents and team tasks. A shared CRM workspace for consultancy and operations."
-    },
-    "visibility": "public"
+    "visibility": "public",
+    "category": "WEB"
   }
 ];
   d.career = [

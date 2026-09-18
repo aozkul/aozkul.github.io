@@ -27,8 +27,9 @@
     let count=0;
     projects.forEach((p,i)=>{
       const page=projectPage(lang==='en' ? p.pageEn || p.page : p.page); if(!page)return;
-      const a=el('article','project-card');a.dataset.repository=p.name;a.dataset.language=p.language || 'other';
-      a.hidden=Boolean(query && !fold([p.name,p.language,local(p.description)].join(' ')).includes(query));
+      const category=['CRM','WEB','iOS App'].includes(p.category)?p.category:null;
+      const a=el('article','project-card');a.dataset.repository=p.name;a.dataset.language=p.language || 'other';a.dataset.category=category || '';
+      a.hidden=Boolean(query && !fold([p.name,p.category,p.language,local(p.description)].join(' ')).includes(query));
       if(!a.hidden)count++;
       const target=link(page,'project-link');
       const action=t('projects.visit');target.setAttribute('aria-label',`${p.name} — ${action}`);
@@ -44,7 +45,8 @@
       }
       const sign=el('span','art-arrow');sign.append(arrow());art.append(sign);
       const info=el('div','project-info'),meta=el('div','project-meta');
-      meta.append(el('span','',t('projects.website')),el('span','language',p.language || 'Web'));
+      meta.append(el('span','',t('projects.website')));
+      if(category)meta.append(el('span','project-category',category));
       const bottom=el('div','project-bottom');bottom.append(el('span','',action),arrow());
       info.append(meta,el('h3','',p.name));if(local(p.description))info.append(el('p','project-description',local(p.description)));info.append(bottom);
       target.append(art,info);a.append(target);
