@@ -8,7 +8,7 @@ window.PORTFOLIO_DATA = {
     "linkedin": null,
     "resumeUrl": null
   },
-  "defaultLanguage": "tr",
+  "defaultLanguage": "en",
   "projects": [
     {
       "name": "NuThings_v1",
