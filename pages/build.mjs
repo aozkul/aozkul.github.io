@@ -6,8 +6,12 @@ for(const file of ['index.html','404.html','site-premium.css','site-data.js','po
 fs.cpSync(path.join(repo,'assets/icons'),path.join(out,'assets/icons'),{recursive:true});
 // The Kernora showcase is public; the separate CRM repository remains private.
 execFileSync(process.execPath,[path.join(dir,'kernora/build.mjs')],{stdio:'inherit'});
+
+// Public Fish Me privacy/support documents; do not copy app source or private data.
+fs.mkdirSync(path.join(out,'fishme'),{recursive:true});
+for(const file of ['index.html','privacy.html','support.html'])fs.copyFileSync(path.join(repo,'fishme',file),path.join(out,'fishme',file));
 fs.writeFileSync(path.join(out,'.nojekyll'),'');
 fs.writeFileSync(path.join(out,'robots.txt'),'User-agent: *\nAllow: /\nSitemap: https://aozkul.github.io/sitemap.xml\n');
 const kernoraUrls=fs.readFileSync(path.join(out,'kernora/sitemap.xml'),'utf8').match(/<url>.*?<\/url>/g)||[];
-fs.writeFileSync(path.join(out,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://aozkul.github.io/</loc></url>'+kernoraUrls.join('')+'</urlset>');
+fs.writeFileSync(path.join(out,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://aozkul.github.io/</loc></url>'+['','privacy.html','support.html'].map(p=>'<url><loc>https://aozkul.github.io/fishme/'+p+'</loc></url>').join('')+kernoraUrls.join('')+'</urlset>');
 console.log('Portfolio built with explicit public asset allowlist.');
