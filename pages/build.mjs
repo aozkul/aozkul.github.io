@@ -13,6 +13,8 @@ for(const file of ['index.html','privacy.html','support.html'])fs.copyFileSync(p
 // Signed public catalog only; never copy private keys, API secrets or app data.
 fs.mkdirSync(path.join(out,'fishme/catalog'),{recursive:true});
 for(const file of ['manifest.json','manifest.sig','water-catalog-1.json'])fs.copyFileSync(path.join(repo,'fishme/catalog',file),path.join(out,'fishme/catalog',file));
+fs.mkdirSync(path.join(out,'fishme/media'),{recursive:true});
+for(const file of ['index.html','licensed-media.zip'])fs.copyFileSync(path.join(repo,'fishme/media',file),path.join(out,'fishme/media',file));
 fs.writeFileSync(path.join(out,'.nojekyll'),'');
 fs.writeFileSync(path.join(out,'robots.txt'),'User-agent: *\nAllow: /\nSitemap: https://aozkul.github.io/sitemap.xml\n');
 const kernoraUrls=fs.readFileSync(path.join(out,'kernora/sitemap.xml'),'utf8').match(/<url>.*?<\/url>/g)||[];
