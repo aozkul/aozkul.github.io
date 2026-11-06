@@ -164,6 +164,8 @@
   "language": "Swift",
   "tone": "sage",
   "icon": "assets/icons/fishme.png",
+  "preview": "fishme/assets/tr-home.webp",
+  "previewEn": "fishme/assets/en-home.webp",
   "page": "https://aozkul.github.io/fishme/index-tr.html",
   "pageEn": "https://aozkul.github.io/fishme/",
   "catalogOnly": true,
