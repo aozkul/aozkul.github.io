@@ -158,6 +158,22 @@
   "contact.linkedin": "Connect on LinkedIn"
 });
   d.projects = [
+{
+  "name": "Fish Me If You Can",
+  "mark": "FM",
+  "language": "Swift",
+  "tone": "sage",
+  "icon": "assets/icons/fishme.png",
+  "page": "https://aozkul.github.io/fishme/index-tr.html",
+  "pageEn": "https://aozkul.github.io/fishme/",
+  "catalogOnly": true,
+  "description": {
+    "tr": "Kaynaklı meralar, koşullara göre av planı ve GPS günlüğü. Gününü fotoğraf, müzik ve rotayla bir hikâyeye dönüştür.",
+    "en": "Source-labelled fishing spots, local conditions and a GPS journal. Turn your day into a story with photos, music and your route."
+  },
+  "visibility": "public",
+  "category": "iOS App"
+},
   {
     "name": "Kernora",
     "mark": "K",

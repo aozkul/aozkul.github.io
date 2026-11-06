@@ -9,7 +9,8 @@ execFileSync(process.execPath,[path.join(dir,'kernora/build.mjs')],{stdio:'inher
 
 // Public Fish Me privacy/support documents; do not copy app source or private data.
 fs.mkdirSync(path.join(out,'fishme'),{recursive:true});
-for(const file of ['index.html','privacy.html','support.html'])fs.copyFileSync(path.join(repo,'fishme',file),path.join(out,'fishme',file));
+for(const file of ['index.html','index-tr.html','index-de.html','privacy.html','support.html'])fs.copyFileSync(path.join(repo,'fishme',file),path.join(out,'fishme',file));
+fs.cpSync(path.join(repo,'fishme/assets'),path.join(out,'fishme/assets'),{recursive:true});
 // Signed public catalog only; never copy private keys, API secrets or app data.
 fs.mkdirSync(path.join(out,'fishme/catalog'),{recursive:true});
 for(const file of ['manifest.json','manifest.sig','water-catalog-1.json'])fs.copyFileSync(path.join(repo,'fishme/catalog',file),path.join(out,'fishme/catalog',file));
@@ -18,5 +19,5 @@ for(const file of ['index.html','licensed-media.zip'])fs.copyFileSync(path.join(
 fs.writeFileSync(path.join(out,'.nojekyll'),'');
 fs.writeFileSync(path.join(out,'robots.txt'),'User-agent: *\nAllow: /\nSitemap: https://aozkul.github.io/sitemap.xml\n');
 const kernoraUrls=fs.readFileSync(path.join(out,'kernora/sitemap.xml'),'utf8').match(/<url>.*?<\/url>/g)||[];
-fs.writeFileSync(path.join(out,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://aozkul.github.io/</loc></url>'+['','privacy.html','support.html'].map(p=>'<url><loc>https://aozkul.github.io/fishme/'+p+'</loc></url>').join('')+kernoraUrls.join('')+'</urlset>');
+fs.writeFileSync(path.join(out,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://aozkul.github.io/</loc></url>'+['','index-tr.html','index-de.html','privacy.html','support.html'].map(p=>'<url><loc>https://aozkul.github.io/fishme/'+p+'</loc></url>').join('')+kernoraUrls.join('')+'</urlset>');
 console.log('Portfolio built with explicit public asset allowlist.');
