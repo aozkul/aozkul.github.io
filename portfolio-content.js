@@ -177,6 +177,24 @@
   "category": "iOS App"
 },
   {
+    "name": "PayGuard",
+    "title": "PayGuards",
+    "mark": "PG",
+    "language": "Swift",
+    "tone": "rose",
+    "icon": "assets/icons/payguard-original.png",
+    "preview": "assets/previews/payguard-tr.webp",
+    "previewEn": "assets/previews/payguard-en.webp",
+    "page": "https://aozkul.github.io/PayGuard/",
+    "pageEn": "https://aozkul.github.io/PayGuard/en/",
+    "description": {
+      "tr": "Tüm abonelikler tek ekranda. E-posta kutunu ve banka ekstreni tarar, zamları ve son iptal günlerini önceden haber verir, yenilemeleri takvimde gösterir. Garanti ve iade süreleri de burada. Bir kez öde, Pro ömür boyu.",
+      "en": "Every subscription in one clear view. Scans your inbox and bank statements, warns you about price rises and cancel-by deadlines, and shows renewals on a calendar. Warranties and return windows too. Pay once, keep Pro forever."
+    },
+    "visibility": "public",
+    "category": "iOS App"
+  },
+  {
     "name": "Kernora",
     "mark": "K",
     "language": "TypeScript",
@@ -233,21 +251,6 @@
     "description": {
       "tr": "İstek anında kendine kısa bir mola ver. Küçük adımlarla, kendi hızında.",
       "en": "Take a short pause when a craving arrives. Small steps, at your own pace."
-    },
-    "visibility": "public",
-    "category": "iOS App"
-  },
-  {
-    "name": "PayGuard",
-    "mark": "PG",
-    "language": "HTML",
-    "tone": "rose",
-    "icon": "assets/icons/payguard-original.png",
-    "page": "https://aozkul.github.io/PayGuard/",
-    "pageEn": "https://aozkul.github.io/PayGuard/en/",
-    "description": {
-      "tr": "Abonelikler, garantiler ve iade tarihleri. Önemli günler tek bir yerde.",
-      "en": "Subscriptions, warranties and return dates. Keep the important dates together."
     },
     "visibility": "public",
     "category": "iOS App"
